@@ -2,6 +2,12 @@
 
 Egyszerűen követhetővé teszi a kódokat tartamazó cimkék nyilvántartását.
 
+**Főbb funkciók**
+
+- Egyszerű, IP cím alapú telephely felismerés, mely nem igényel külön felhasználói bejelentlezést.
+- Új cimkék előzetes, vagy az értékesítéskori felvitele.
+- Egyszerű, űrlapos használat (cimke sorszám + termék kategória kiválasztása)
+- Dátum-intervallum szerinti kimutatások a kötelező adatszolgáltatáshoz
 
 *A rendszer a Fotoplus Kft. részére készült saját, belső felhasználási céllal, ugyanakkor szabadon felhasználható és módosítható bárki számára. Az esetleges hibás működésért felelősséget nem vállalunk.*
 
