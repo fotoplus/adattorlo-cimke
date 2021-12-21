@@ -1,1 +1,19 @@
-# veglegestorles
+# Adattörlő beváltó kód nyilvántartás
+
+Egyszerűen követhetővé teszi a kódokat tartamazó cimkék nyilvántartását.
+
+
+*A rendszer a Fotoplus Kft. részére készült saját, belső felhasználási céllal, ugyanakkor szabadon felhasználható és módosítható bárki számára. Az esetleges hibás működésért felelősséget nem vállalunk.*
+
+---
+
+**Kapcsolódó:**
+
+726/2020. (XII. 31.) Korm. rendelet az adatok végleges hozzáférhetetlenné tételét lehetővé tevő alkalmazás biztosításával kapcsolatos eljárási szabályok meghatározásáról
+[https://net.jogtar.hu/jogszabaly?docid=A2000726.KOR](https://net.jogtar.hu/jogszabaly?docid=A2000726.KOR)
+
+Véglegestörlés weboldal
+[https://veglegestorles.hu](https://veglegestorles.hu)
+
+NMHH
+[https://nmhh.hu/veglegestorles](https://nmhh.hu/veglegestorles)
