@@ -32,7 +32,7 @@ $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
 
     <link rel="stylesheet" href="styles/master.css">
 
-        <title><?php echo $title; ?> <?php echo 'Fotoplus ' . $branch; ?></title>
+        <title><? echo $title . ' ' . $branch; ?></title>
     <meta name="description" content="Weboldal">
 
   </head>
