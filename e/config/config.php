@@ -18,7 +18,7 @@ ini_set("display_errors", 1);
  * Bővebben: /e/modules/parse_uri/README.md
  * 
  */
-define("URI_IGNORE", 4);
+define("URI_IGNORE", 0);
 
 
 ?>
