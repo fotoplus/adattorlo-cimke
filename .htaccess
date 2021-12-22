@@ -3,7 +3,7 @@
 RewriteEngine On
 
 # Az aktuális oldal(rész) gyökere, ha saját domainen van akkor csak "/"
-RewriteBase "/dev/projektek/fotoplus/munkaido"
+RewriteBase "/"
 
 
 # Itt lényegében mindent átadunk az URL-ből a PHP-nek, aztán az majd jól megoldja...
