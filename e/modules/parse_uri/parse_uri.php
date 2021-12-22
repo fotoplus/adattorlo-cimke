@@ -9,40 +9,26 @@
 
   public $segments;
   public $page;
-
+  public $pages_dir = './e/pages/';
 
   function __construct() {
 
     $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
-    $this->$segments = explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/'));
-    $this->$segments = array_slice ($this->$segments, URI_IGNORE);
+    $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), URI_IGNORE);
+    #$segments = array_slice ($segments, URI_IGNORE);
 
   }
-  
 
-  function is_page($page_check) {
 
-    $page_check = isset( $page_check ) ? $page_check : $segments[0];
-    $page_file = PAGES_DIR . $page_check . '.php';
+  function page() {
+    $this->page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
+    $this->page['file'] = PAGES_DIR . $this->page['name'] . '.php';
     
-    if( file_exists($page_file) ) {
-      return $page_file;
+    if( file_exists( $this->page['file'] ) ) {
+      return $this->page['file'];
     } else {
       false;
     }
-    #unset($page_file);
-  }
-
-  function page() {
-
-    $this->$page['name'] = isset( $this->$segments[0] ) ? $this->$segments[0] : 'home';
-
-    if( $this->$page['file'] = $this->is_page($this->$page['name']) ) {
-        include $this->$page['file'];
-    } else {
-      print 'ismeretlen hiba';
-    }
-
   }
 
  }

@@ -19,6 +19,6 @@ ini_set("display_errors", 1);
  * 
  */
 define("URI_IGNORE", 0);
-define("PAGES_DIR", './e/pages/');
+
 
 ?>
