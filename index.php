@@ -31,7 +31,7 @@ $page = new ParseURI();
 
     <link rel="stylesheet" href="styles/master.css">
 
-    <link rel="stylesheet" href="styles/<?php print $page['name']; ?>.css">
+    
 
     <title>Fotoplus</title>
     <meta name="description" content="Weboldal">
