@@ -9,7 +9,7 @@
 
   public $segments;
   public $page;
-  protected $pages_dir = './e/pages/';
+  public $pages_dir = './e/pages/';
 
   function __construct() {
 
