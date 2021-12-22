@@ -2,6 +2,12 @@
 
 require_once ('e/config/config.php');
 require_once ('e/modules/mysql/mysql.php');
+require_once ('e/modules/accesscontroll/ipcheck.php');
+
+$pages_dir = './e/pages/';
+$_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
+$segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), URI_IGNORE);
+$page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
 
 
 ?>
@@ -38,23 +44,14 @@ require_once ('e/modules/mysql/mysql.php');
 
     <?php
 
-  $pages_dir = './e/pages/';
-  $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
-  $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), URI_IGNORE);
-  
-  print_r ($segments);
-  
-  #$segments = array_slice ($segments, URI_IGNORE);
-  $page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
-  $page['file'] = $pages_dir . $page['name'] . '.php';
-  
-  if( file_exists($page['file']) ) {
-    include $page['file'];
-  } else {
-    print 'hiba';
-  }
 
-    
+      $page['file'] = $pages_dir . $page['name'] . '.php';
+      if( file_exists($page['file']) ) {
+        include $page['file'];
+      } else {
+        print 'hiba';
+      }
+   
     ?>
 
     <!-- Scriptek -->  

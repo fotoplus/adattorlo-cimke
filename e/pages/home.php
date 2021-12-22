@@ -1,3 +1,5 @@
-<?php
-print ('1. oldal');
+<?php require_once ('e/modules/accesscontroll/ipcheck.php');
+
+
+
 ?>
