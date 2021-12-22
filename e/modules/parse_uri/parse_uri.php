@@ -9,7 +9,7 @@
 
   public $segments;
   public $page;
-  public $pages_dir = './e/pages/';
+
 
   function __construct() {
 
@@ -23,7 +23,7 @@
   function is_page($page_check) {
 
     $page_check = isset( $page_check ) ? $page_check : $segments[0];
-    $page_file = $pages_dir . $page_check . '.php';
+    $page_file = PAGES_DIR . $page_check . '.php';
     
     if( file_exists($page_file) ) {
       return $page_file;
