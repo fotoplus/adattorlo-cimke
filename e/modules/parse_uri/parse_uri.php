@@ -14,8 +14,8 @@
   function __construct() {
 
     $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
-    $segments = explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/'));
-    $this->$segments = array_slice ($segments, URI_IGNORE);
+    $this->$segments = explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/'));
+    $this->$segments = array_slice ($this->$segments, URI_IGNORE);
 
   }
   
@@ -35,10 +35,10 @@
 
   function page() {
 
-    $page['name'] = isset( $this->$segments[0] ) ? $this->$segments[0] : 'home';
+    $this->$page['name'] = isset( $this->$segments[0] ) ? $this->$segments[0] : 'home';
 
-    if( $page['file'] = $this->is_page($page['name']) ) {
-        include $page['file'];
+    if( $this->$page['file'] = $this->is_page($this->$page['name']) ) {
+        include $this->$page['file'];
     } else {
       print 'ismeretlen hiba';
     }
