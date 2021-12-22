@@ -2,10 +2,6 @@
 
 require_once ('e/config/config.php');
 require_once ('e/modules/mysql/mysql.php');
-require_once ('e/modules/parse_uri/parse_uri.php');
-
-
-$page = new ParseURI();
 
 
 ?>
@@ -42,14 +38,19 @@ $page = new ParseURI();
 
     <?php
 
-      print $page->page['name'];
-      print $page->segments[0];
-
-    if($page->page()) {
-      print $page->page();
-    } else {
-      print 'hiba';
-    }
+  $pages_dir = './e/pages/';
+  $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
+  $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), URI_IGNORE);
+  #$segments = array_slice ($segments, URI_IGNORE);
+  $page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
+  $page['file'] = $pages_dir . $page['name'] . '.php';
+  
+  if( file_exists($page['file']) ) {
+    include $page['file'];
+  } else {
+    print 'hiba';
+  }
+}
     
     ?>
 
