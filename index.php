@@ -43,7 +43,11 @@ $page = new ParseURI();
     <?php
 
 
-    $page->page();
+    if($page->page()) {
+      print $page->page();
+    } else {
+      print 'hiba';
+    }
     
     ?>
 

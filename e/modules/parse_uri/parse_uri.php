@@ -22,7 +22,7 @@
 
   function page() {
     $this->page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
-    $this->page['file'] = PAGES_DIR . $this->page['name'] . '.php';
+    $this->page['file'] = $this->pages_dir . $this->page['name'] . '.php';
     
     if( file_exists( $this->page['file'] ) ) {
       return $this->page['file'];
