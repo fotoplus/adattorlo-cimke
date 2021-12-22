@@ -35,7 +35,7 @@
 
   function page() {
 
-    $page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
+    $page['name'] = isset( $this->$segments[0] ) ? $this->$segments[0] : 'home';
 
     if( $page['file'] = $this->is_page($page['name']) ) {
         include $page['file'];
