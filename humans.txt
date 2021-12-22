@@ -1,0 +1,25 @@
+/* TEAM */
+
+Borbás Mátyás, Pécs, HU - https://github.com/borbasmatyas
+
+
+
+/* THANKS */
+
+Markus Wulftange, Germany - https://github.com/mwulftange
+for: https://stackoverflow.com/a/659008
+
+
+
+/* SITE */
+
+HTML5 - https://w3.org/TR/html52/
+CSS - https://www.w3.org/Style/CSS/Overview.en.html
+jQuery - https://jquery.com
+Popper - https://popper.js.org
+Bootstrap - https://getbootstrap.com
+Modernizr - https://modernizr.com
+PHP - https://php.net
+Apache - https://apache.org
+MySQL - https://www.mysql.com/
+
