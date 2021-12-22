@@ -17,7 +17,7 @@
     $segments = explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/'));
     $segments = array_slice ($segments, URI_IGNORE);
 
-    #print_r($segments);
+    page();
 
   }
   
@@ -27,27 +27,30 @@
     $page_check = isset( $page_check ) ? $page_check : $segments[0];
     $page_file = $pages_dir . $page_check . '.php';
     
-    if( file_exists() ) {
-
+    if( file_exists($page_file) ) {
+      return $page_file;
+    } else {
+      false;
     }
-
-    unset($page_file);
-
+    #unset($page_file);
   }
 
   function page() {
 
     $page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
 
+    if( $page['file'] = is_page($page['name']) ) {
+        include $page['file'];
+    } else {
+      print 'ismeretlen hiba';
+    }
+
   }
 
  }
 
 
- $page=new ParseURI();
-
-
-
-die();
+#$page=new ParseURI();
+#die();
 
 ?>

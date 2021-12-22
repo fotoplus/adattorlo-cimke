@@ -3,7 +3,9 @@
 require_once ('e/config/config.php');
 require_once ('e/modules/mysql/mysql.php');
 require_once ('e/modules/parse_uri/parse_uri.php');
-require_once ('e/modules/auth/auth.php');
+
+
+$page = new ParseURI();
 
 
 ?>
