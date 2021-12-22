@@ -42,6 +42,8 @@ $page = new ParseURI();
 
     <?php
 
+      print $page->page['name'];
+      print $page->segments[0];
 
     if($page->page()) {
       print $page->page();
