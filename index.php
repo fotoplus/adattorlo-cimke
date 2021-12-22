@@ -41,6 +41,9 @@ require_once ('e/modules/mysql/mysql.php');
   $pages_dir = './e/pages/';
   $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
   $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), URI_IGNORE);
+  
+  print_r ($segments);
+  
   #$segments = array_slice ($segments, URI_IGNORE);
   $page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
   $page['file'] = $pages_dir . $page['name'] . '.php';
