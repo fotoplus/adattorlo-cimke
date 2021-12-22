@@ -1,14 +1,14 @@
 <?php
 
 require_once ('e/config/config.php');
-require_once ('e/modules/mysql/mysql.php');
 require_once ('e/modules/accesscontrol/ipcheck.php');
+require_once ('e/modules/mysql/mysql.php');
+
 
 $pages_dir = './e/pages/';
 $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
 $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), URI_IGNORE);
 $page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
-
 
 ?>
 <!doctype html>
@@ -18,7 +18,6 @@ $page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
     <link rel="stylesheet" href="styles/vendor/normalize/normalize.css">
     <link rel="stylesheet" href="styles/vendor/bootstrap/bootstrap.min.css">
@@ -33,9 +32,7 @@ $page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
 
     <link rel="stylesheet" href="styles/master.css">
 
-    
-
-    <title>Fotoplus</title>
+        <title>Fotoplus</title>
     <meta name="description" content="Weboldal">
 
   </head>
