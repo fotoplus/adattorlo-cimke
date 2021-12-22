@@ -37,7 +37,7 @@
 
     $page['name'] = isset( $segments[0] ) ? $segments[0] : 'home';
 
-    if( $page['file'] = is_page($page['name']) ) {
+    if( $page['file'] = $this->is_page($page['name']) ) {
         include $page['file'];
     } else {
       print 'ismeretlen hiba';
