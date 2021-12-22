@@ -2,7 +2,7 @@
 
 require_once ('e/config/config.php');
 require_once ('e/modules/mysql/mysql.php');
-require_once ('e/modules/accesscontroll/ipcheck.php');
+require_once ('e/modules/accesscontrol/ipcheck.php');
 
 $pages_dir = './e/pages/';
 $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
