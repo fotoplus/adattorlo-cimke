@@ -15,7 +15,7 @@
 
     $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
     $segments = explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/'));
-    $segments = array_slice ($segments, URI_IGNORE);
+    $this->$segments = array_slice ($segments, URI_IGNORE);
 
   }
   
