@@ -53,7 +53,7 @@ require_once ('e/modules/mysql/mysql.php');
   } else {
     print 'hiba';
   }
-}
+
     
     ?>
 
