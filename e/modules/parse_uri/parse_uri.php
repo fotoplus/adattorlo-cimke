@@ -17,8 +17,6 @@
     $segments = explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/'));
     $segments = array_slice ($segments, URI_IGNORE);
 
-    page();
-
   }
   
 

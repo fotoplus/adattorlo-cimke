@@ -43,7 +43,7 @@ $page = new ParseURI();
     <?php
 
 
-    
+    $page->page();
     
     ?>
 
