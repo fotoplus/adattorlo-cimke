@@ -4,7 +4,7 @@
 
 <div id="main-center" class="rounded-main border-main">
 
-  <h1>Új jegyzék<br>iktatószám rögzítése</h1>
+
 
 
   <?php
@@ -15,6 +15,9 @@
     break;
     case "jegyzek":
   ?>
+  
+    <h1><span>Új jegyzék<br>iktatószám rögzítése</h1>
+
     <form method="post" action="/feltoltes/jegyzek">
       <fieldset>
           <legend>Átadójegyzék</legend>
