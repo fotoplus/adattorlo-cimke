@@ -133,7 +133,7 @@
               <input name="veg" type="number" value="<?php print $veg; ?>" required>
 
               <?php 
-                if ($_POST['save'] == 'ellenorzes'):
+                if ( isset($_POST['save']) and $_POST['save'] == 'ellenorzes'):
                   print('<button name="save" value="letrehozas" >Létrehozás</button>');
                 else:
                   print('<button name="save" value="ellenorzes" >Tovább</button>');
