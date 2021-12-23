@@ -23,8 +23,9 @@ if ( $page['name'] == 'hiba' and is_numeric($segments[1]) ) :
   http_response_code($segments[1]);
 endif;
 
-if( !file_exists($page['file']) ):
+if( @ not(file_exists($page['file'])) ):
   header('Location /hiba/404');
+  $allow=false;
 else:
   $allow=true;
 endif;
