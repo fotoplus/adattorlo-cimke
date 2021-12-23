@@ -75,31 +75,29 @@
         elseif($_POST['save'] == 'letrehozas'):
           
           // Címke sorszám
-          $n=$cimke['kezdet'];
+          $sorszam=$cimke['kezdet'];
 
           // Számláló
           $i=0;
           
           do {
-            
-            $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetel` (`datum`, `iktatoszam`) VALUES (?, ?)');
-            $stmt->bind_param('ss', $datum, $iktatoszam);
+            $stmt = $mysqli->prepare('INSERT INTO `cimke` (`aid`, `csomag`, `doboz`, `sorszam`) VALUES (?, ?, ?, ?)');
+            $stmt->bind_param('ssss', $cimke['iktatoszam'], $cimke['csomag'], $cimke['doboz'], $n);
             if ( $stmt->execute() ) :
               $log .= '<p>A ' . $n . ' sorszámú címke hozzáadva.</p>';
             else:
               // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
               $log .= '<p class="red">Hiba (' . $n . '): '.$stmt->errorCode().'</p>';
             endif;
-    
 
-            $n++; // Címke sorszám
+            $sorszam++; 
             $i++; // Számláló
-          } while($n <= $cimke['veg']);
+
+          } while($sorszam <= $cimke['veg']);
 
           $msg = '<p>' . $i . ' új címke került a rendszerbe.</p>';
           $msg = '<p>Ha hibát írt ki, vissza kell vonni a műveletet.<br>Szükség esetén készíts képernyőképet és kérj segítséget!</p>';
           $cimke = false;
-
 
         else:
           $msg = '<p class="red">Váratlan hiba történt. Sor: '. __LINE__ .'</p>';
@@ -111,7 +109,7 @@
           <fieldset>
               <legend>Új címke intervallum rögzítése</legend>
               <?php
-              if():
+              if($log):
                 print '<pre id="log" class="rounded-main">' . $log . '</pre>';
               endif;
 

@@ -5,6 +5,8 @@ require_once ('e/modules/mysql/mysql.php');
 require_once ('e/modules/accesscontrol/ipcheck.php');
 
 $msg=false;
+$log=false;
+
 $pages_dir = './e/pages/';
 
 $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
