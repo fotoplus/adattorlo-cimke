@@ -20,8 +20,8 @@ include('e/credentials/secureconfig.php');
  * Bővebben: https://www.php.net/manual/en/errorfunc.configuration.php
  *
  */
-#error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
-error_reporting(E_ALL);
+error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
+#error_reporting(E_ALL);
 ini_set("display_errors", 1); 
 
 
