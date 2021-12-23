@@ -6,25 +6,35 @@
 
 <h1>Új átadás/átvétel rögzítése</h1>
 
-<form name="feltoltes" method="post">
-  <fieldset>
-    <?php
-    ?>
-      <legend>Átadójegyzék</legend>
 
-      <input name="step" type="hidden" value="jegyzek" >
+<?php
 
-      <label for="iktatoszam">Átadó jegyzék iktatószáma</label>
-      <input name="iktatoszam" type="text" value="">
+switch($segments[1]):
+  default:
 
-      <label for="datum">Átadás/átvétel ideje</label>
-      <input name="datum" type="date" value="">
+  break;
+  case 
+?>
+  <form method="post" action="/feltoltes/jegyzek">
+    <fieldset>
+        <legend>Átadójegyzék</legend>
 
-      <input type="subit" name="tovabb" vlaue="Mentés és tovább" title="Menti a jegyzék adatait és továbblép a cimkék rögzítéséhez" >
-      <input type="subit" name="mentes" vlaue="Mentés" >
-      <a href="/feltoltes" title="Mentés nélküli visszalépés" >Vissza</a>
+        <input name="step" type="hidden" value="jegyzek" >
 
-    <?php
-    ?>
-  </fieldset>
-</from>
+        <label for="iktatoszam">Átadó jegyzék iktatószáma</label>
+        <input name="iktatoszam" type="text" value="">
+
+        <label for="datum">Átadás/átvétel ideje</label>
+        <input name="datum" type="date" value="">
+
+        <input type="submit" name="tovabb" vlaue="Mentés és tovább" title="Menti a jegyzék adatait és továbblép a cimkék rögzítéséhez" >
+        <input type="submit" name="mentes" vlaue="Mentés" >
+        <a href="/feltoltes" title="Mentés nélküli visszalépés" >Vissza</a>
+    </fieldset>
+  </from>
+<?php
+
+endswitch;
+
+?>
+
