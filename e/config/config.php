@@ -46,6 +46,8 @@ $ip_allow_list = array(
   $dev['ip']          => $dev['branch']
 );
 
+print_r($ip_allow_list);
+
 /** Title
  * 
  * Az oldal neve
