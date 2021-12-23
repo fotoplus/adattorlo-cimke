@@ -15,12 +15,10 @@
         <label for="sorszam">Címke sorszáma</label>
         <input name="sorszam" type="text" value="" placeholder="Olvasd be a vonalkódot" required>
 
-        <label for="termek">Termék</label>
-        <select name="termek" required="required">
-          <option disabled="disabled">Válassz a listából</option>
-          <option >1</option>
-          <option >2</option>
-        </select>
+        <label>Termék</label>
+
+        
+        
 
 
 
