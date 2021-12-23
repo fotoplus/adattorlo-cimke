@@ -11,12 +11,15 @@
 
   switch($segments[1]):
     default:
-
+      ?>
+        <a href="/feltolte/jegyzek">Jegyzék</a>
+        <a href="/feltolte/cimke">Cimke</a>
+      <?php
     break;
     case "jegyzek":
   ?>
-  
-    <h1><span>Új jegyzék<br>iktatószám rögzítése</h1>
+
+    <h1>Új jegyzék rögzítése</h1>
 
     <form method="post" action="/feltoltes/jegyzek">
       <fieldset>
