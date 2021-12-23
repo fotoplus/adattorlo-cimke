@@ -26,7 +26,6 @@ define("URI_IGNORE", 0);
  * Engedélyezett IP címek
  * 
  */
-
 $ip_allow_list = array(
   '109.232.207.137'   => 'Központ',
   '81.182.248.25'     => 'Központ',
@@ -35,9 +34,11 @@ $ip_allow_list = array(
   $dev['ip']          => $dev['branch']
 );
 
-
+/** Title
+ * 
+ * Az oldal neve
+ * 
+ */
 $title = "FOTOPLUS";
-
-
 
 ?>
