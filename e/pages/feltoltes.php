@@ -67,7 +67,7 @@
       if( isset($_POST['save']) ):
 
         if ($_POST['save'] == 'ellenorzes'):
-          $szam= $veg-$kezdet;
+          $szam= $cimke['veg']-$cimke['kezdet'];
           $msg = '<p>Ezzel a művelettel <span class="bold">'.$szam.'</span> db új címkét fogsz létrehozni a rendszerben.</p>';
           $msg = '<p>Ha rendben vannak az adatok, nyomd meg a létrehozás gombot.</p>';
 
@@ -112,7 +112,7 @@
 
               <label for="iktatoszam">Az átadó jegyzék iktatószáma</label>
               <select name="iktatoszam" required>
-                <option <?php if(!$cimke) { print('selected="selected"'); } ?> disabled="disabled">Válassz a listából</option>
+                <option <?php if(!$cimke or !$cimke['iktatoszam']) { print('selected="selected"'); } ?> disabled="disabled">Válassz a listából</option>
                 <?php
                   $query_iktatoszamok = ('SELECT * FROM `atadas-atvetel` ORDER BY `datum` ASC');
                   $result_iktatoszamok = $mysqli->query($query_iktatoszamok);
