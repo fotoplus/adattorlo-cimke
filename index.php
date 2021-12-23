@@ -13,7 +13,6 @@ require_once ('e/config/config.php');
 require_once ('e/modules/accesscontrol/ipcheck.php');
 require_once ('e/modules/mysql/mysql.php');
 
-
 if ( $page['name'] == 'hiba' and is_numeric($segments[1]) ) :
   http_response_code($segments[1]);
 endif;
@@ -58,6 +57,8 @@ endif;
     <?php
         if($allow):
           include $page['file'];
+        else:
+          print 'Váratlan hiba: ' . __LINE__ ;
         endif;
     ?>
 
