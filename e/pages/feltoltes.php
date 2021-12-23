@@ -4,7 +4,7 @@
 
 <div id="main-center" class="rounded-main border-main">
 
-  <h1>Új átadás/átvétel rögzítése</h1>
+  <h1>Új jegyzék<br>iktatószám rögzítése</h1>
 
 
   <?php
