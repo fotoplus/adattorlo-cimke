@@ -84,10 +84,10 @@
             $stmt = $mysqli->prepare('INSERT INTO `cimke` (`aid`, `csomag`, `doboz`, `sorszam`) VALUES (?, ?, ?, ?)');
             $stmt->bind_param('ssss', $cimke['iktatoszam'], $cimke['csomag'], $cimke['doboz'], $sorszam);
             if ( $stmt->execute() ) :
-              $log .= '<p>A ' . $n . ' sorszámú címke hozzáadva.</p>';
+              $log .= 'A ' . $sorszam . ' sorszámú címke hozzáadva.'.chr(13);
             else:
               // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
-              $log .= '<p class="red">Hiba (' . $n . '): '.$stmt->errorCode().'</p>';
+              $log .= '<span class="red">Hiba (' . $sorszam . '): '.$stmt->errorCode().'</span>'.chr(13);
             endif;
 
             $sorszam++; 

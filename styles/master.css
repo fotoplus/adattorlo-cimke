@@ -129,10 +129,10 @@ h1 {
 }
 
 #log {
-  height: 50px;
-  overflow: scroll;
+  height: 100px;
+  overflow-x: scroll;
   font-family: monospace;
-  font-size: 0.5rem;
+  font-size: 1rem;
   color: #909090;
   background-color: black;
   border: 1px #00eeff solid;
