@@ -9,6 +9,9 @@ $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), 
 $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
 $page['file'] = $pages_dir . $page['name'] . '.php';
 
+print_r($segments);
+print_r($page);
+
 require_once ('e/config/config.php');
 require_once ('e/modules/accesscontrol/ipcheck.php');
 require_once ('e/modules/mysql/mysql.php');
