@@ -76,7 +76,7 @@
           do {
             print $n;
             $n++;
-          } while($n <= $veg)
+          } while($n <= $veg);
           /*
           $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetel` (`datum`, `iktatoszam`) VALUES (?, ?)');
           $stmt->bind_param('ss', $datum, $iktatoszam);
