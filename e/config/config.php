@@ -46,6 +46,25 @@ $ip_allow_list = array(
   $dev['ip']          => $dev['branch']
 );
 
+
+/** Termék típusok
+ * 
+ * 
+ */
+$termek = array(
+  '8523 51 10'  => 'Pendrive',
+  '8523 51 10'  => 'Memóriakártya',
+  '8523 51 10'  => 'SSD vagy más félvezető alapú adattároló',
+  '8471 70 50'  => 'Merevlemezes meghajtó (HDD)',
+  '8471 49 00'  => 'Asztali számítógép',
+  '8471 30 00'  => 'Hordozható számítógép',
+  '8471 41 00'  => 'Táblagép',
+  '8517 12 00'  => 'Mobiltelefon',
+
+);
+
+
+
 /** Title
  * 
  * Az oldal neve
