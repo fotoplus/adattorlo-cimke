@@ -23,7 +23,7 @@
           $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetell` (`datum`, `iktatoszam`) VALUES (?, ?)');
           $stmt->bind_param('ss', $datum, $iktatoszam);
 
-          if ($stmt->execute()) :
+          if ( @$stmt->execute() ) :
             $msg = '<p>A(z) '.$iktatoszam.' iktatószámú átadás-átvételi jegyzéket '.$datum.' dátummal elmentettük.</p>';
           else:
             $msg = '<p>Sajnálatos módon valami nem sikerült, az adatbázis válasza: '.$stmt->errorCode().'</p>';
