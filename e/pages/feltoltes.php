@@ -58,11 +58,11 @@
       <?php
     break;
     case "cimke":
-      $iktatoszam   = isset($_POST['iktatoszam'])   ? $_POST['iktatoszam']        : false;
-      $csomag       = isset($_POST['csomag'])       ? $_POST['csomag']            : false;
-      $doboz        = isset($_POST['doboz'])        ? $_POST['doboz']             : false;
-      $kezdet       = isset($_POST['kezdet'])       ? $_POST['kezdet']            : false;
-      $veg          = isset($_POST['veg'])          ? $_POST['veg']               : false;
+      $cimke['iktatoszam']   = isset($_POST['iktatoszam'])   ? $_POST['iktatoszam']        : false;
+      $cimke['csomag']       = isset($_POST['csomag'])       ? $_POST['csomag']            : false;
+      $cimke['doboz']        = isset($_POST['doboz'])        ? $_POST['doboz']             : false;
+      $cimke['kezdet']       = isset($_POST['kezdet'])       ? $_POST['kezdet']            : false;
+      $cimke['veg']          = isset($_POST['veg'])          ? $_POST['veg']               : false;
 
       if( isset($_POST['save']) ):
 
@@ -84,6 +84,7 @@
           $stmt->bind_param('ss', $datum, $iktatoszam);
           */
           $msg = $i . ' új címke került a rendszerbe.';
+          $cimke = false;
           /*
           if ( $stmt->execute() ) :
             $msg = '<p></p>';
@@ -125,16 +126,16 @@
               </select>
 
               <label for="csomag">A csomag azonosítószáma</label>
-              <input name="csomag" type="number" value="<?php print $csomag; ?>" required>
+              <input name="csomag" type="number" value="<?php print $cimke['csomag']; ?>" required>
 
               <label for="doboz">A doboz azonosítószáma</label>
-              <input name="doboz" type="number" value="<?php print $doboz; ?>" required>
+              <input name="doboz" type="number" value="<?php print $cimke['doboz']; ?>" required>
 
               <label for="kezdet">Sorszámok kezdete</label>
-              <input name="kezdet" type="number" value="<?php print $kezdet; ?>" required>
+              <input name="kezdet" type="number" value="<?php print $cimke['kezdet']; ?>" required>
 
               <label for="veg">Sorszámok vége</label>
-              <input name="veg" type="number" value="<?php print $veg; ?>" required>
+              <input name="veg" type="number" value="<?php print $cimke['veg']; ?>" required>
 
               <?php 
                 if ( isset($_POST['save']) and $_POST['save'] == 'ellenorzes'):
