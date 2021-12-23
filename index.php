@@ -4,6 +4,10 @@ $allow=false;
 $msg=false;
 $pages_dir = './e/pages/';
 
+require_once ('e/config/config.php');
+require_once ('e/modules/accesscontrol/ipcheck.php');
+require_once ('e/modules/mysql/mysql.php');
+
 $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
 $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), URI_IGNORE);
 $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
@@ -11,10 +15,9 @@ $page['file'] = $pages_dir . $page['name'] . '.php';
 
 print_r($segments);
 print_r($page);
+print_r($_SERVER['REQUEST_URI_PATH']);
+print_r($_SERVER['REQUEST_URI']);
 
-require_once ('e/config/config.php');
-require_once ('e/modules/accesscontrol/ipcheck.php');
-require_once ('e/modules/mysql/mysql.php');
 
 if ( $page['name'] == 'hiba' and is_numeric($segments[1]) ) :
   http_response_code($segments[1]);
