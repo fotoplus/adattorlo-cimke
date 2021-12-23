@@ -28,7 +28,7 @@
           <input name="datum" type="date" value="">
 
           <button name="save" >Mentés</button>
-          <a href="/feltoltes" title="Mentés nélküli visszalépés" >Vissza</a>
+          <a href="/feltoltes" title="Mentés nélküli visszalépés" class="space" >Vissza</a>
       </fieldset>
     </from>
   <?php

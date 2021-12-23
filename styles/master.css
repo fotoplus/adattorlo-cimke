@@ -78,6 +78,10 @@ button {
 
 }
 
+.space {
+  margin: 20px 20px 20px 20px;
+  white-space: ;
+}
 
 h1 {
   font-size: 2rem;
