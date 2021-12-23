@@ -13,3 +13,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule !^index\.php$ index.php
 
 
+# Egyedi hibaoldalak
+ErrorDocument 400 /hiba/400
+ErrorDocument 401 /hiba/401
+ErrorDocument 403 /hiba/403
+ErrorDocument 404 /hiba/404
+ErrorDocument 500 /hiba/500

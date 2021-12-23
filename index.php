@@ -1,8 +1,11 @@
 <?php
+print __LINE__ '<br>';
 
 require_once ('e/modules/accesscontrol/ipcheck.php');
 require_once ('e/config/config.php');
 require_once ('e/modules/mysql/mysql.php');
+
+print __LINE__ '<br>';
 
 $msg=false;
 $pages_dir = './e/pages/';
@@ -12,12 +15,15 @@ $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), 
 $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
 $page['file'] = $pages_dir . $page['name'] . '.php';
 
+print __LINE__ '<br>';
 
 if( !file_exists($page['file']) ):
+  print __LINE__ '<br>';
   header('Location: /hiba/404');
+  print __LINE__ '<br>';
   exit;
 else:
-
+print __LINE__ '<br>';
 
 ?>
 <!doctype html>
