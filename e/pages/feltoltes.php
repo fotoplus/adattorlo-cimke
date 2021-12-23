@@ -103,7 +103,7 @@
 
               <label for="iktatoszam">Az átadó jegyzék iktatószáma</label>
               <select name="iktatoszam" required>
-                <option disbaled>Válassz a listából</option>
+                <option disbaled="disabled">Válassz a listából</option>
                 <?php
                   $query_iktatoszamok = ('SELECT * FROM `atadas-atvetel` ORDER BY `datum` ASC');
                   $result_iktatoszamok = $mysqli->query($query_iktatoszamok);
