@@ -15,7 +15,7 @@ RewriteRule !^index\.php$ index.php
 
 
 
-<Files /e/>
+<Directory /e/>
 Order allow,deny
 Deny from all
-</Files>
+</Directory>
