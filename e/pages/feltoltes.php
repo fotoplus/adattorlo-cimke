@@ -70,7 +70,7 @@
           print_r($cimke);
           $szam= $cimke['veg']-$cimke['kezdet'];
           $msg = '<p>Ezzel a művelettel <span class="bold">'.$szam.'</span> db új címkét fogsz létrehozni a rendszerben.</p>';
-          $msg = '<p>Ha rendben vannak az adatok, nyomd meg a létrehozás gombot.</p>';
+          $msg .= '<p>Ha rendben vannak az adatok, nyomd meg a létrehozás gombot.</p>';
 
         elseif($_POST['save'] == 'letrehozas'):
           $n=$cimke['kezdet'];
@@ -119,7 +119,7 @@
                   $result_iktatoszamok = $mysqli->query($query_iktatoszamok);
                   while($iktatoszamok = $result_iktatoszamok->fetch_assoc()) {
                     print('<option value="' . $iktatoszamok['id'] . '"');
-                    if(isset($cimke['iktatoszam']) and $cimke['iktatoszam']==$iktatoszamok['id']) { print('selected="selected"'); }
+                    if(isset($cimke['iktatoszam']) and $cimke['iktatoszam']==$iktatoszamok['id']) { print(' selected="selected" '); }
                     print('>' . $iktatoszamok['iktatoszam'] . '</option>');
                   }
 
