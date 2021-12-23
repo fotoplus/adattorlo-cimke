@@ -74,7 +74,7 @@
         elseif($_POST['save'] == 'letrehozas'):
           $n=$kezdet;
           do {
-            print $n;
+            print $n .'<br>';
             $n++;
           } while($n <= $veg);
           /*
