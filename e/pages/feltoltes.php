@@ -2,40 +2,41 @@
 
 ?>
 
+<div id="main-center" class="rounded-main border-main">
+
+  <h1>Új átadás/átvétel rögzítése</h1>
 
 
-<h1>Új átadás/átvétel rögzítése</h1>
+  <?php
 
+  switch($segments[1]):
+    default:
 
-<?php
+    break;
+    case "jegyzek":
+  ?>
+    <form method="post" action="/feltoltes/jegyzek">
+      <fieldset>
+          <legend>Átadójegyzék</legend>
 
-switch($segments[1]):
-  default:
+          <input name="step" type="hidden" value="jegyzek" >
 
-  break;
-  case "jegyzek":
-?>
-  <form method="post" action="/feltoltes/jegyzek">
-    <fieldset>
-        <legend>Átadójegyzék</legend>
+          <label for="iktatoszam">Átadó jegyzék iktatószáma</label>
+          <input name="iktatoszam" type="text" value="">
 
-        <input name="step" type="hidden" value="jegyzek" >
+          <label for="datum">Átadás/átvétel ideje</label>
+          <input name="datum" type="date" value="">
 
-        <label for="iktatoszam">Átadó jegyzék iktatószáma</label>
-        <input name="iktatoszam" type="text" value="">
+          <input type="submit" name="tovabb" value="Mentés és tovább" title="Menti a jegyzék adatait és továbblép a cimkék rögzítéséhez" >
+          <input type="submit" name="mentes" value="Mentés" >
+          <a href="/feltoltes" title="Mentés nélküli visszalépés" >Vissza</a>
+      </fieldset>
+    </from>
+  <?php
+    break;
 
-        <label for="datum">Átadás/átvétel ideje</label>
-        <input name="datum" type="date" value="">
+  endswitch;
 
-        <input type="submit" name="tovabb" value="Mentés és tovább" title="Menti a jegyzék adatait és továbblép a cimkék rögzítéséhez" >
-        <input type="submit" name="mentes" value="Mentés" >
-        <a href="/feltoltes" title="Mentés nélküli visszalépés" >Vissza</a>
-    </fieldset>
-  </from>
-<?php
-  break;
+  ?>
 
-endswitch;
-
-?>
-
+</div>
