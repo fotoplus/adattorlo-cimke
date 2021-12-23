@@ -82,7 +82,7 @@
           
           do {
             $stmt = $mysqli->prepare('INSERT INTO `cimke` (`aid`, `csomag`, `doboz`, `sorszam`) VALUES (?, ?, ?, ?)');
-            $stmt->bind_param('ssss', $cimke['iktatoszam'], $cimke['csomag'], $cimke['doboz'], $n);
+            $stmt->bind_param('ssss', $cimke['iktatoszam'], $cimke['csomag'], $cimke['doboz'], $sorszam);
             if ( $stmt->execute() ) :
               $log .= '<p>A ' . $n . ' sorszámú címke hozzáadva.</p>';
             else:
