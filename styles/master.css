@@ -104,3 +104,7 @@ h1 {
 .bold {
   font-weight: bold;
 }
+
+.red {
+  color: #ca0000;
+}

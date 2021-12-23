@@ -33,7 +33,7 @@ footer, header, hgroup, main, menu, nav, section {
     display: none;
 }
 body {
-	line-height: 1;
+	line-height: 1.5em;
 }
 menu, ol, ul {
 	list-style: none;
