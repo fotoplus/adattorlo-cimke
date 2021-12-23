@@ -12,6 +12,12 @@ $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), 
 $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
 $page['file'] = $pages_dir . $page['name'] . '.php';
 
+if ($segments[0] == 'hiba') {
+
+  http_response_code($segments[1]);
+
+}
+
 ?>
 <!doctype html>
 <html class="no-js" lang="hu">
