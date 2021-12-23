@@ -12,7 +12,7 @@ $dev['branch']=false;
  * Nem nyilvános beállításokhoz.
  * 
  */
-include('./credentials/secure_config.php');
+include('e/credentials/secure_config.php');
 
 /** PHP hibakijelzés
  * 

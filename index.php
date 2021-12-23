@@ -1,6 +1,4 @@
 <?php
-$ip=gethostbyname('otthon.borbasmatyas.hu');
-print $ip;
 
 require_once ('e/config/config.php');
 require_once ('e/modules/accesscontrol/ipcheck.php');
