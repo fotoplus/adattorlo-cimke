@@ -112,6 +112,10 @@ h1 {
   color: #ca0000;
 }
 
+.green {
+  color:rgb(0, 255, 21);
+}
+
 #main {
   background-color: white;
   margin: 25px auto;
