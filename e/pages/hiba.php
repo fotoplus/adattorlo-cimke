@@ -1,6 +1,8 @@
 <?php
 
-switch($segments[1]):
+$kod = ( isset($segments[1]) and is_numeric($segments[1]) ) ? $segments[1] : false;
+
+switch($kod):
   default:
     $head='Jajj';
     $text='Valami egészen váratlan dolog történt.';
