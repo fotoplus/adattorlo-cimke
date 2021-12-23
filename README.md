@@ -11,6 +11,8 @@ Egyszerűen követhetővé teszi a kódokat tartamazó cimkék nyilvántartásá
 
 *A rendszer a Fotoplus Kft. részére készült saját, belső felhasználási céllal, ugyanakkor szabadon felhasználható és módosítható bárki számára. Az esetleges hibás működésért felelősséget nem vállalunk.*
 
+*(A rendszer jelenleg szégyenletes módon procedurális, mert nem volt idő megérteni még az objektumorientált programozást.)*
+
 ---
 
 **Kapcsolódó:**
