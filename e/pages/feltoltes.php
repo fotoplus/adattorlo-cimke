@@ -108,7 +108,7 @@
                   $query_iktatoszamok = ('SELECT * FROM `atadas-atvetel` ORDER BY `datum` ASC');
                   $result_iktatoszamok = $mysqli->query($query_iktatoszamok);
                   while($iktatoszamok = $result_iktatoszamok->fetch_assoc()) {
-                      print('<option value="' . $iktatoszamok['id'] . '"')
+                      print('<option value="' . $iktatoszamok['id'] . '"');
                       if($selected==$iktatoszamok['id']) { print('selected="selected"'); }
                       print('>' . $iktatoszamok['iktatoszam'] . '</option>');
                     }
