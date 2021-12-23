@@ -20,7 +20,7 @@
           $iktatoszam   = isset($_POST['iktatoszam'])   ? $_POST['iktatoszam']    : false;
           $datum        = isset($_POST['datum'])        ? $_POST['datum']         : false;
 
-          $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetel` (`datum`, `iktatoszam`) VALUES (?, ?)');
+          $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetell` (`datum`, `iktatoszam`) VALUES (?, ?)');
           $stmt->bind_param('ss', $datum, $iktatoszam);
 
           if ($stmt->execute()) :
