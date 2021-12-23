@@ -1,6 +1,9 @@
 <?php
 
-$allow=false;
+require_once ('e/modules/accesscontrol/ipcheck.php');
+require_once ('e/config/config.php');
+require_once ('e/modules/mysql/mysql.php');
+
 $msg=false;
 $pages_dir = './e/pages/';
 
@@ -9,18 +12,11 @@ $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), 
 $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
 $page['file'] = $pages_dir . $page['name'] . '.php';
 
-require_once ('e/config/config.php');
-require_once ('e/modules/accesscontrol/ipcheck.php');
-require_once ('e/modules/mysql/mysql.php');
-
 
 if( !file_exists($page['file']) ):
   header('Location: /hiba/404');
-  $allow=false;
   exit;
 else:
-  $allow=true;
-endif;
 
 
 ?>
@@ -54,11 +50,7 @@ endif;
   <body>
 
     <?php
-        if($allow):
-          include $page['file'];
-        else:
-          print 'Váratlan hiba: ' . __LINE__ ;
-        endif;
+      include $page['file'];
     ?>
 
     <!-- Scriptek -->  
