@@ -2,6 +2,8 @@
 
 ?>
 
+
+
 <h1>Új átadás/átvétel rögzítése</h1>
 
 <form name="feltoltes" method="post">
