@@ -72,7 +72,11 @@
           $msg = '<p>Ha rendben vannak az adatok, nyomd meg a létrehozás gombot.</p>';
 
         elseif($_POST['save'] == 'letrehozas'):
-
+          $n=$kezdet;
+          do {
+            print $n;
+            $n++;
+          } while($n <= $veg)
           /*
           $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetel` (`datum`, `iktatoszam`) VALUES (?, ?)');
           $stmt->bind_param('ss', $datum, $iktatoszam);
@@ -128,7 +132,13 @@
               <label for="veg">Sorszámok vége</label>
               <input name="veg" type="number" value="<?php print $veg; ?>" required>
 
-              <button name="save" value="ellenorzes" >Tovább</button>
+              <?php 
+                if ($_POST['save'] == 'ellenorzes'):
+                  print('<button name="save" value="letrehozas" >Létrehozás</button>');
+                else:
+                  print('<button name="save" value="ellenorzes" >Tovább</button>');
+                endif;
+              ?>
               <a href="/feltoltes" title="Mentés nélküli visszalépés" class="space" >Vissza</a>
           </fieldset>
         </from>
