@@ -1,1 +1,1 @@
-<?php if(!$allow): header('Location /hiba/403'); exit; endif; ?>
+<?php if(!$allow): header('Location: /hiba/403'); exit; endif; ?>
