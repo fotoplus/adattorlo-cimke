@@ -16,6 +16,6 @@ RewriteRule !^index\.php$ index.php
 
 
 <Directory /e/>
-Order allow,deny
-Deny from all
+  Order allow,deny
+  Deny from all
 </Directory>
