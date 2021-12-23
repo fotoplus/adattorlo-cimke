@@ -50,7 +50,9 @@ else:
   <body>
 
     <?php
-      include $page['file'];
+      if($allow) {
+        include $page['file'];
+      }
     ?>
 
     <!-- Scriptek -->  
