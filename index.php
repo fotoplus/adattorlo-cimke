@@ -20,6 +20,8 @@ endif;
 
 if( !file_exists($page['file']) ):
   #header('Location: /hiba/404');
+  print_r($page['file']);
+  print_r($_SERVER['REQUEST_URI_PATH']);
   exit;
   $allow=false;
 else:
