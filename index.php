@@ -19,9 +19,9 @@ $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="styles/vendor/normalize/normalize.css">
-    <link rel="stylesheet" href="styles/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/vendor/reset/reset.css">
+    <link rel="stylesheet" href="/styles/vendor/normalize/normalize.css">
+    <link rel="stylesheet" href="/styles/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/vendor/reset/reset.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,7 +30,7 @@ $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="styles/master.css">
+    <link rel="stylesheet" href="/styles/master.css">
 
         <title><?php echo $title . ' címkenyilvántartás - ' . $branch; ?></title>
     <meta name="description" content="Weboldal">
