@@ -17,7 +17,9 @@
 
         <label for="termek">Termék</label>
         <select name="termek" required="required">
-          <option selected="selected" disabled="disabled">Válassz a listából</option>
+          <option disabled="disabled">Válassz a listából</option>
+          <option >1</option>
+          <option >2</option>
         </select>
 
 
