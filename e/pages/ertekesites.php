@@ -1,5 +1,1 @@
-<?php require_once ('e/modules/accesscontrol/ipcheck.php');
-
-
-
-?>
+<?php if(!$allow): header('Location /hiba/403'); exit; endif; ?>

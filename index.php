@@ -1,22 +1,29 @@
 <?php
 
-require_once ('e/config/config.php');
-require_once ('e/modules/accesscontrol/ipcheck.php');
-require_once ('e/modules/mysql/mysql.php');
-
+$allow=false;
 $msg=false;
-
 $pages_dir = './e/pages/';
+
 $_SERVER['REQUEST_URI_PATH'] = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
 $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), URI_IGNORE);
 $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
 $page['file'] = $pages_dir . $page['name'] . '.php';
 
-if ($segments[0] == 'hiba') {
+require_once ('e/config/config.php');
+require_once ('e/modules/accesscontrol/ipcheck.php');
+require_once ('e/modules/mysql/mysql.php');
 
+
+if ( $page['name]'] == 'hiba' and is_numeric($segments[1]) ) :
   http_response_code($segments[1]);
+endif;
 
-}
+if( !file_exists($page['file']) ):
+  header('Location /hiba/404');
+else:
+  $allow=true;
+endif;
+
 
 ?>
 <!doctype html>
@@ -49,15 +56,9 @@ if ($segments[0] == 'hiba') {
   <body>
 
     <?php
-
-
-      
-      if( file_exists($page['file']) ) {
-        include $page['file'];
-      } else {
-        print 'hiba';
-      }
-   
+        if($allow):
+          include $page['file'];
+        endif;
     ?>
 
     <!-- Scriptek -->  
