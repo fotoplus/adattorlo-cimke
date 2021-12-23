@@ -126,5 +126,14 @@ h1 {
   width: 90%;
   max-width: 500px;
   padding: 20px 20px 20px 20px;
+}
 
+#log {
+  height: 50px;
+  overflow: scroll;
+  font-family: monospace;
+  font-size: 0.5rem;
+  color: #909090;
+  background-color: black;
+  border: 1px #00eeff solid;
 }

@@ -73,27 +73,34 @@
           $msg .= '<p>Ha rendben vannak az adatok, nyomd meg a létrehozás gombot.</p>';
 
         elseif($_POST['save'] == 'letrehozas'):
+          
+          // Címke sorszám
           $n=$cimke['kezdet'];
+
+          // Számláló
           $i=0;
+          
           do {
-            print $n .'<br>';
-            $n++;
-            $i++;
+            
+            $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetel` (`datum`, `iktatoszam`) VALUES (?, ?)');
+            $stmt->bind_param('ss', $datum, $iktatoszam);
+            if ( $stmt->execute() ) :
+              $log .= '<p>A ' . $n . ' sorszámú címke hozzáadva.</p>';
+            else:
+              // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
+              $log .= '<p class="red">Hiba (' . $n . '): '.$stmt->errorCode().'</p>';
+            endif;
+    
+
+            $n++; // Címke sorszám
+            $i++; // Számláló
           } while($n <= $cimke['veg']);
-          /*
-          $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetel` (`datum`, `iktatoszam`) VALUES (?, ?)');
-          $stmt->bind_param('ss', $datum, $iktatoszam);
-          */
-          $msg = $i . ' új címke került a rendszerbe.';
+
+          $msg = '<p>' . $i . ' új címke került a rendszerbe.</p>';
+          $msg = '<p>Ha hibát írt ki, vissza kell vonni a műveletet.<br>Szükség esetén készíts képernyőképet és kérj segítséget!</p>';
           $cimke = false;
-          /*
-          if ( $stmt->execute() ) :
-            $msg = '<p></p>';
-          else:
-            // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
-            $msg = '<p>Sajnálatos módon valami nem sikerült, az adatbázis válasza: '.$stmt->errorCode().'</p>';
-          endif;
-          */
+
+
         else:
           $msg = '<p class="red">Váratlan hiba történt. Sor: '. __LINE__ .'</p>';
         endif;
@@ -104,11 +111,15 @@
           <fieldset>
               <legend>Új címke intervallum rögzítése</legend>
               <?php
-              if($msg) {
+              if():
+                print '<pre id="log" class="rounded-main">' . $log . '</pre>';
+              endif;
+
+              if($msg):
                 print'<div class="msg rounded-main border-main">';
                 print $msg;
                 print '</div>';
-              }
+              endif;
               ?>
 
               <label for="iktatoszam">Az átadó jegyzék iktatószáma</label>
