@@ -5,7 +5,7 @@ Egyszerűen követhetővé teszi a kódokat tartamazó cimkék nyilvántartásá
 **Főbb funkciók**
 
 - Egyszerű, IP cím alapú telephely felismerés, mely nem igényel külön felhasználói bejelentlezést.
-- Új cimkék előzetes, vagy az értékesítéskori felvitele.
+- Új cimkék előzetes, jegyzék szerinti felvitele
 - Egyszerű, űrlapos használat (cimke sorszám + termék kategória kiválasztása)
 - Dátum-intervallum szerinti kimutatások a kötelező adatszolgáltatáshoz
 

@@ -10,26 +10,33 @@
   switch($segments[1]):
     default:
       ?>
-        <a href="/feltolte/jegyzek">Jegyzék</a>
-        <a href="/feltolte/cimke">Cimke</a>
+        <a href="/feltoltes/jegyzek" style="">Új jegyzék</a>
+        <a href="/feltoltes/cimke">Új cimke (intervallum)</a>
       <?php
     break;
     case "jegyzek":
-  ?>
+        if( isset($_POST['save']) ):
 
+          $iktatoszam   = isset($_POST['iktatoszam'])   ? $_POST['iktatoszam']    : false;
+          $datum        = isset($_POST['datum'])        ? $_POST['datum']         : false;
+
+          $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetel` (`datum`, `iktatoszam`) VALUES (?, ?)');
+          $stmt->bind_param('ss', $datum, $iktatoszam);
+          $stmt->execute();
+
+        endif;
+  ?>
     <form method="post" action="/feltoltes/jegyzek">
       <fieldset>
           <legend>Új jegyzék rögzítése</legend>
 
-          <input name="step" type="hidden" value="jegyzek" >
-
           <label for="iktatoszam">Átadó jegyzék iktatószáma</label>
-          <input name="iktatoszam" type="text" value="">
+          <input name="iktatoszam" type="text" value="" required>
 
           <label for="datum">Átadás/átvétel ideje</label>
-          <input name="datum" type="date" value="">
+          <input name="datum" type="date" value="" required>
 
-          <button name="save" >Mentés</button>
+          <button name="save" value="uj" >Mentés</button>
           <a href="/feltoltes" title="Mentés nélküli visszalépés" class="space" >Vissza</a>
       </fieldset>
     </from>
