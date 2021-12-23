@@ -14,7 +14,7 @@ require_once ('e/modules/accesscontrol/ipcheck.php');
 require_once ('e/modules/mysql/mysql.php');
 
 
-if ( $page['name]'] == 'hiba' and is_numeric($segments[1]) ) :
+if ( $page['name'] == 'hiba' and is_numeric($segments[1]) ) :
   http_response_code($segments[1]);
 endif;
 
