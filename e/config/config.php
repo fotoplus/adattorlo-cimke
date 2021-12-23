@@ -1,5 +1,6 @@
 <?php
 
+include('./credentials/secure_config.php');
 
 /** PHP hibakijelzés
  * 
@@ -25,14 +26,18 @@ define("URI_IGNORE", 0);
  * Engedélyezett IP címek
  * 
  */
+
 $ip_allow_list = array(
-  '109.232.207.137' => 'Központ',
-  '81.182.248.25' => 'Központ',
-  '195.228.232.60' => 'Centrum',
-  '92.249.143.114' => 'Budapest',
+  '109.232.207.137'   => 'Központ',
+  '81.182.248.25'     => 'Központ',
+  '195.228.232.60'    => 'Centrum',
+  '92.249.143.114'    => 'Budapest',
+  $dev['ip']          => $dev['branch']
 );
 
 
 $title = "FOTOPLUS";
+
+
 
 ?>
