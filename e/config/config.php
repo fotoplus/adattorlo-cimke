@@ -1,5 +1,17 @@
 <?php
 
+/** DEV
+ * 
+ * Fejlesztői hozzáférés
+ */
+$dev['ip']=false;
+$dev['branch']=false;
+
+/** Secure config
+ * 
+ * Nem nyilvános beállításokhoz.
+ * 
+ */
 include('./credentials/secure_config.php');
 
 /** PHP hibakijelzés
