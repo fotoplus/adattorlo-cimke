@@ -19,7 +19,7 @@ if ( $page['name'] == 'hiba' and isset($segments[1]) and is_numeric($segments[1]
 endif;
 
 if( !file_exists($page['file']) ):
-  header('Location: /hiba/404');
+  #header('Location: /hiba/404');
   exit;
   $allow=false;
 else:
