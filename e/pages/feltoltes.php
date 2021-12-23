@@ -5,10 +5,8 @@
 <div id="main-center" class="rounded-main border-main">
 
 
-
-
   <?php
-
+  $segments[1] = isset($segments[1]) ? $segments[1] : false;
   switch($segments[1]):
     default:
       ?>
@@ -19,11 +17,9 @@
     case "jegyzek":
   ?>
 
-    <h1>Új jegyzék rögzítése</h1>
-
     <form method="post" action="/feltoltes/jegyzek">
       <fieldset>
-          <legend>Átadójegyzék</legend>
+          <legend>Új jegyzék rögzítése</legend>
 
           <input name="step" type="hidden" value="jegyzek" >
 
