@@ -1,9 +1,8 @@
 <?php
 
-require_once ('e/modules/accesscontrol/ipcheck.php');
 require_once ('e/config/config.php');
 require_once ('e/modules/mysql/mysql.php');
-
+require_once ('e/modules/accesscontrol/ipcheck.php');
 
 $msg=false;
 $pages_dir = './e/pages/';
