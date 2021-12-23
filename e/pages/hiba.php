@@ -28,7 +28,7 @@ switch($segments[1]):
 endswitch;
 
 ?>
-<div class="main-center">
+<div id="main-center">
 
   <h1><?php print $head; ?></h1>
 
