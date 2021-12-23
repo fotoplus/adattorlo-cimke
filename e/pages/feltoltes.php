@@ -67,7 +67,7 @@
       if( isset($_POST['save']) and !array_search(false, $cimke) ):
 
         if ($_POST['save'] == 'ellenorzes'):
-          print_r($cimke);
+
           $szam = $cimke['veg']-$cimke['kezdet']+1;
           $msg = '<p>Ezzel a művelettel <span class="bold">'.$szam.'</span> db új címkét fogsz létrehozni a rendszerben.</p>';
           $msg .= '<p>Ha rendben vannak az adatok, nyomd meg a létrehozás gombot.</p>';
