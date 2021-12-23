@@ -13,7 +13,7 @@ switch($segments[1]):
   default:
 
   break;
-  case 
+  case "jegyzek":
 ?>
   <form method="post" action="/feltoltes/jegyzek">
     <fieldset>
@@ -33,6 +33,7 @@ switch($segments[1]):
     </fieldset>
   </from>
 <?php
+  break;
 
 endswitch;
 
