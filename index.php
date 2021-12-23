@@ -14,7 +14,7 @@ $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
 $page['file'] = $pages_dir . $page['name'] . '.php';
 
 
-if ( $page['name'] == 'hiba' and is_numeric($segments[1]) ) :
+if ( $page['name'] == 'hiba' and isset($segments[1]) and is_numeric($segments[1]) ) :
   http_response_code($segments[1]);
 endif;
 
