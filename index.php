@@ -13,18 +13,14 @@ $segments = array_slice (explode('/', trim($_SERVER['REQUEST_URI_PATH'], '/')), 
 $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
 $page['file'] = $pages_dir . $page['name'] . '.php';
 
-print_r($segments);
-print_r($page);
-print_r($_SERVER['REQUEST_URI_PATH']);
-print_r($_SERVER['REQUEST_URI']);
-
 
 if ( $page['name'] == 'hiba' and is_numeric($segments[1]) ) :
   http_response_code($segments[1]);
 endif;
 
-if( @ not(file_exists($page['file'])) ):
+if( !file_exists($page['file']) ):
   header('Location /hiba/404');
+  exit;
   $allow=false;
 else:
   $allow=true;
