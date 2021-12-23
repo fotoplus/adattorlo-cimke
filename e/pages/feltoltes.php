@@ -27,8 +27,7 @@
           <label for="datum">Átadás/átvétel ideje</label>
           <input name="datum" type="date" value="">
 
-          <input type="submit" name="tovabb" value="Mentés és tovább" title="Menti a jegyzék adatait és továbblép a cimkék rögzítéséhez" >
-          <input type="submit" name="mentes" value="Mentés" >
+          <button name="save" >Mentés</button>
           <a href="/feltoltes" title="Mentés nélküli visszalépés" >Vissza</a>
       </fieldset>
     </from>
