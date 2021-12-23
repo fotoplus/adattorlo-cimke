@@ -103,12 +103,14 @@
 
               <label for="iktatoszam">Az átadó jegyzék iktatószáma</label>
               <select name="iktatoszam" required>
-                <option selected="selected" disabled="disabled">Válassz a listából</option>
+                <option <?php if($iktatoszam) { print('selected="selected"'); ?> disabled="disabled">Válassz a listából</option>
                 <?php
                   $query_iktatoszamok = ('SELECT * FROM `atadas-atvetel` ORDER BY `datum` ASC');
                   $result_iktatoszamok = $mysqli->query($query_iktatoszamok);
                   while($iktatoszamok = $result_iktatoszamok->fetch_assoc()) {
-                      print('<option value="' . $iktatoszamok['id'] . '">' . $iktatoszamok['iktatoszam'] . '</option>');
+                      print('<option value="' . $iktatoszamok['id'] . '"')
+                      if($selected==$iktatoszamok['id']) { print('selected="selected"'); }
+                      print('>' . $iktatoszamok['iktatoszam'] . '</option>');
                     }
 
                 ?>
