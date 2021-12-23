@@ -58,11 +58,11 @@
       <?php
     break;
     case "cimke":
-      $cimke['iktatoszam']   = isset($_POST['iktatoszam'])   ? $_POST['iktatoszam']        : false;
-      $cimke['csomag']       = isset($_POST['csomag'])       ? $_POST['csomag']            : false;
-      $cimke['doboz']        = isset($_POST['doboz'])        ? $_POST['doboz']             : false;
-      $cimke['kezdet']       = isset($_POST['kezdet'])       ? $_POST['kezdet']            : false;
-      $cimke['veg']          = isset($_POST['veg'])          ? $_POST['veg']               : false;
+      $cimke['iktatoszam']   = ( isset($_POST['iktatoszam'])  and !empty($_POST['iktatoszam']) )  ? $_POST['iktatoszam']  : false;
+      $cimke['csomag']       = ( isset($_POST['csomag'])      and !empty($_POST['csomag'])     )  ? $_POST['csomag']      : false;
+      $cimke['doboz']        = ( isset($_POST['doboz'])       and !empty($_POST['doboz'])      )  ? $_POST['doboz']       : false;
+      $cimke['kezdet']       = ( isset($_POST['kezdet'])      and !empty($_POST['kezdet'])     )  ? $_POST['kezdet']      : false;
+      $cimke['veg']          = ( isset($_POST['veg'])         and !empty($_POST['veg'])        )  ? $_POST['veg']         : false;
 
       if( isset($_POST['save']) ):
 
