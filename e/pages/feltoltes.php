@@ -24,7 +24,7 @@
           $stmt->bind_param('ss', $datum, $iktatoszam);
 
           if ( $stmt->execute() ) :
-            $msg = '<p>A(z) '.$iktatoszam.' iktatószámú átadás-átvételi jegyzéket '.$datum.' dátummal elmentettük.</p>';
+            $msg = '<p>A(z) <span class="bold">'.$iktatoszam.'>/span> iktatószámú átadás-átvételi jegyzéket <span class="bold">'.$datum.'</span> dátummal elmentettük.</p>';
           else:
             // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
             $msg = '<p>Sajnálatos módon valami nem sikerült, az adatbázis válasza: '.$stmt->errorCode().'</p>';

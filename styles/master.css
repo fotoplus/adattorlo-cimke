@@ -96,3 +96,7 @@ h1 {
   margin-bottom: 10px;
   background-color: #eeeeee;
 }
+
+.bold {
+  font-weight: bold;
+}
