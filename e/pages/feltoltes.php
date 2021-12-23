@@ -62,12 +62,13 @@
       <?php
     break;
     case "cimke":
+      $iktatoszam   = isset($_POST['iktatoszam'])   ? $_POST['iktatoszam']        : false;
+      $csomag       = isset($_POST['csomag'])       ? $_POST['csomag']            : false;
+      $doboz        = isset($_POST['doboz'])        ? $_POST['doboz']             : false;
+      $kezdet       = isset($_POST['kezdet'])       ? $_POST['kezdet']            : false;
+      $veg          = isset($_POST['veg'])          ? $_POST['veg']               : false;
+
       if( isset($_POST['save']) ):
-        $iktatoszam   = isset($_POST['iktatoszam'])   ? $_POST['iktatoszam']        : false;
-        $csomag       = isset($_POST['csomag'])       ? $_POST['csomag']            : false;
-        $doboz        = isset($_POST['doboz'])        ? $_POST['doboz']             : false;
-        $kezdet       = isset($_POST['kezdet'])       ? $_POST['kezdet']            : false;
-        $veg          = isset($_POST['veg'])          ? $_POST['veg']               : false;
 
         if ($_POST['save'] == 'ellenorzes'):
 
