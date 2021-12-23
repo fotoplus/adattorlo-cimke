@@ -54,7 +54,7 @@
               <button name="save" value="uj" >Mentés</button>
               <a href="/feltoltes" title="Mentés nélküli visszalépés" class="space" >Vissza</a>
           </fieldset>
-        </from>
+        </form>
       <?php
     break;
     case "cimke":
@@ -67,7 +67,7 @@
       if( isset($_POST['save']) ):
 
         if ($_POST['save'] == 'ellenorzes'):
-          print $cimke['iktatoszam'];
+          print_r($cimke);
           $szam= $cimke['veg']-$cimke['kezdet'];
           $msg = '<p>Ezzel a művelettel <span class="bold">'.$szam.'</span> db új címkét fogsz létrehozni a rendszerben.</p>';
           $msg = '<p>Ha rendben vannak az adatok, nyomd meg a létrehozás gombot.</p>';
@@ -147,7 +147,7 @@
               ?>
               <a href="/feltoltes" title="Mentés nélküli visszalépés" class="space" >Vissza</a>
           </fieldset>
-        </from>
+        </form>
 
 
       <?php
