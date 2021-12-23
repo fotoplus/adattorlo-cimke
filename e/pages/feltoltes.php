@@ -64,7 +64,7 @@
       $cimke['kezdet']       = ( isset($_POST['kezdet'])      and !empty($_POST['kezdet'])     )  ? $_POST['kezdet']      : false;
       $cimke['veg']          = ( isset($_POST['veg'])         and !empty($_POST['veg'])        )  ? $_POST['veg']         : false;
 
-      if( isset($_POST['save']) ):
+      if( isset($_POST['save']) and !array_search(false, $cimke) ):
 
         if ($_POST['save'] == 'ellenorzes'):
           print_r($cimke);
