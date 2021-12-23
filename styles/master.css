@@ -45,7 +45,8 @@ label {
 }
 
 
-input {
+input,
+select {
   width: calc(100% - 20px);
   margin: 1rem 0 .5rem 0;
   padding: 0.8rem;
