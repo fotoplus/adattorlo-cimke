@@ -90,3 +90,9 @@ h1 {
   margin-bottom: 25px;
 }
 
+.msg {
+  padding: 25px 25px 25px 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: bisque;
+}

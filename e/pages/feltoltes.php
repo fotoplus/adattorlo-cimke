@@ -38,7 +38,9 @@
 
           <?php
           if($msg) {
+            print'<div style="msg">';
             print $msg;
+            print '</div>';
           }
           ?>
 
