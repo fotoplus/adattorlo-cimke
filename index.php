@@ -19,11 +19,9 @@ if ( $page['name'] == 'hiba' and isset($segments[1]) and is_numeric($segments[1]
 endif;
 
 if( !file_exists($page['file']) ):
-  #header('Location: /hiba/404');
-  print_r($page['file']);
-  print_r($_SERVER['REQUEST_URI_PATH']);
-  exit;
+  header('Location: /hiba/404');
   $allow=false;
+  exit;
 else:
   $allow=true;
 endif;
