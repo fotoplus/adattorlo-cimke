@@ -10,12 +10,12 @@ switch($segments[1]):
     $text='';
   break;
   case '401':
-    $head='';
-    $text='';
-  break;
-  case '403':
     $head='Ki?';
     $text='Az oldal megjelenítéséhez hitelesítésre lenne szükség.';
+  break;
+  case '403':
+    $head='Nem!';
+    $text='Hozzáférés megtagadva.';
   break;
   case '404':
     $head='Nincs.';
@@ -27,5 +27,11 @@ switch($segments[1]):
   break;
 endswitch;
 
-
 ?>
+<div class="main-center">
+
+  <h1><?php print $head; ?></h1>
+
+  <p><?php print $text; ?></p>
+
+</div>
