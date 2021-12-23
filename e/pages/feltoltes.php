@@ -73,14 +73,18 @@
 
         elseif($_POST['save'] == 'letrehozas'):
           $n=$kezdet;
+          $i=0;
           do {
+            $i++;
             print $n .'<br>';
             $n++;
           } while($n <= $veg);
           /*
           $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetel` (`datum`, `iktatoszam`) VALUES (?, ?)');
           $stmt->bind_param('ss', $datum, $iktatoszam);
-
+          */
+          $msg = $i . ' új címke került a rendszerbe.';
+          /*
           if ( $stmt->execute() ) :
             $msg = '<p></p>';
           else:
