@@ -30,7 +30,8 @@ $page['name'] = !empty( $segments[0] ) ? $segments[0] : 'home';
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="/styles/master.css">
+    <link rel="stylesheet" href="/styles/master.css?<?php echo date('U'); ?>">
+    <link rel="stylesheet" href="/styles/<?php echo $page['name']; ?>.css?<?php echo date('U'); ?>">
 
         <title><?php echo $title . ' címkenyilvántartás - ' . $branch; ?></title>
     <meta name="description" content="Weboldal">
