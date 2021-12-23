@@ -38,7 +38,7 @@
 
           <?php
           if($msg) {
-            print'<div class="msg">';
+            print'<div class="msg rounded-main border-main">';
             print $msg;
             print '</div>';
           }
