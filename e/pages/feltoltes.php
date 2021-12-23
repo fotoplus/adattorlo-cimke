@@ -72,13 +72,13 @@
           $msg = '<p>Ha rendben vannak az adatok, nyomd meg a létrehozás gombot.</p>';
 
         elseif($_POST['save'] == 'letrehozas'):
-          $n=$kezdet;
+          $n=$cimke['kezdet'];
           $i=0;
           do {
-            $i++;
             print $n .'<br>';
             $n++;
-          } while($n <= $veg);
+            $i++;
+          } while($n <= $cimke['veg']);
           /*
           $stmt = $mysqli->prepare('INSERT INTO `atadas-atvetel` (`datum`, `iktatoszam`) VALUES (?, ?)');
           $stmt->bind_param('ss', $datum, $iktatoszam);
