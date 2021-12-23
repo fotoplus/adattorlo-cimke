@@ -14,8 +14,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule !^index\.php$ index.php
 
 
-
-<Directory /e/>
-  Order allow,deny
+<Directory /e>
   Deny from all
 </Directory>
