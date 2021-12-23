@@ -12,3 +12,10 @@ RewriteBase "/"
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule !^index\.php$ index.php
+
+
+
+<Files /e/>
+Order allow,deny
+Deny from all
+</Files>
