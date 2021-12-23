@@ -40,7 +40,7 @@
           if($msg) {
             print'<div class="msg rounded-main border-main">';
             print $msg;
-            print '<a href="/feltoltes" title="Vissza" class="space" >Vissza</a>';
+            print '<p>Visszatrhetsz az <a href="/feltoltes" title="Vissza">előző menüpontba</a>, vagy továbbmehetsz a <a href="/feltoltes/cimkek">címkék felvitelére</a>, de itt akár új jegyzéket is rögzíthetsz.</p>';
             print '</div>';
           }
           ?>
