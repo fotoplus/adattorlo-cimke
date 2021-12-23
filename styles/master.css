@@ -20,6 +20,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+form {
+  max-width: 400px;
+}
+
 fieldset > legend {
   margin: 0 auto 2rem auto;
   font-weight: bold;

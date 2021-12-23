@@ -5,24 +5,24 @@
 <h1>Új átadás/átvétel rögzítése</h1>
 
 <form name="feltoltes" method="post">
- 
- <?php
- ?>
-  <h2>Átadójegyzék</h2>
+  <fieldset>
+    <?php
+    ?>
+      <legend>Átadójegyzék</legend>
 
-  <input name="step" type="hidden" value="jegyzek" >
+      <input name="step" type="hidden" value="jegyzek" >
 
-  <legend for="iktatoszam">Átadó jegyzék iktatószáma</legend>
-  <input name="iktatoszam" type="text" value="">
+      <label for="iktatoszam">Átadó jegyzék iktatószáma</label>
+      <input name="iktatoszam" type="text" value="">
 
-  <legend for="datum">Átadás/átvétel ideje</legend>
-  <input name="datum" type="date" value="">
+      <label for="datum">Átadás/átvétel ideje</label>
+      <input name="datum" type="date" value="">
 
-  <input type="subit" name="tovabb" vlaue="Mentés és tovább" title="Menti a jegyzék adatait és továbblép a cimkék rögzítéséhez" >
-  <input type="subit" name="mentes" vlaue="Mentés" >
-  <a href="/feltoltes" title="Mentés nélküli visszalépés" >Vissza</a>
+      <input type="subit" name="tovabb" vlaue="Mentés és tovább" title="Menti a jegyzék adatait és továbblép a cimkék rögzítéséhez" >
+      <input type="subit" name="mentes" vlaue="Mentés" >
+      <a href="/feltoltes" title="Mentés nélküli visszalépés" >Vissza</a>
 
-<?php
- ?>
-
+    <?php
+    ?>
+  </fieldset>
 </from>
