@@ -35,7 +35,7 @@ if( isset($_POST['save']) ):
     endif;
 
   else:
-    $err='Hiányzó/hibás sorszám. A sorszám csak számokat tartalmazhat. A kapott sorszám: <br><pre>'.$_POST['sorszam.'].'</pre>';
+    $err='Hiányzó/hibás sorszám. A sorszám csak számokat tartalmazhat. A kapott sorszám: <br><pre>'.$_POST['sorszam'].'</pre>';
   endif;
 
 
