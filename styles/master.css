@@ -46,7 +46,7 @@ label {
 }
 
 
-input,
+input[type="text"],
 select,
 option {
   width: calc(100% - 20px);
