@@ -1,6 +1,6 @@
 input[type="radio"] {
   appearance: none;
-  content:attr("label");
+  display:inline-block;
   width:auto;
   min-width: 100px;
   margin: 1rem auto;
@@ -14,7 +14,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]::before {
-  content:attr("label");
+  content:attr(label);
 
 }
 
