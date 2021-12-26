@@ -37,6 +37,8 @@ if( isset($_POST['save']) ):
       
         if(!$datum or !$telephely or !$kn):
           $err="Minden mezőt ki kell tölteni!";
+        elseif(date('Y-m-d') < $datum):
+          $err="A jövő csak sejthető, de teljes bizonyossággal nem tudhatunk semmit, kivéve, ha valaki a jövőből visszautazott, és megkért arra, hogy vidd fel ezt az értékesítést előre. Ennek viszont beláthatatlan következményei lehennének, ezért erre nincs is lehetőség.";
         endif;
      
       endif;
