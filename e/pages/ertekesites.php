@@ -20,25 +20,25 @@ if( isset($_POST['save']) ):
     $count = $result->num_rows;
 
     if($count > 0):
-      $err='A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke már ki lett adva. Egy címke csak egy alkalommal adható ki.';
+      $err='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke már ki lett adva. Egy címke csak egy alkalommal adható ki.</p>';
     else:
       $query = sprintf('SELECT * FROM `cimke` WHERE `sorszam`="%s"', $mysqli->real_escape_string($sorszam));
       $result = $mysqli->query($query);
       $count = $result->num_rows;
 
       if($count < 1):
-        $err='A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke nem szerepel a jegyzékben, az nem lett még felvíve vagy nem ehhez a céghez tartozik.';
+        $err='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke nem szerepel a jegyzékben, az nem lett még felvíve vagy nem ehhez a céghez tartozik.</p>';
       elseif($count > 1):
-        $err='A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.';
+        $err='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.</p>';
       else:
         $datum      = ( isset($_POST['datum'])  and !empty($_POST['datum']) ) ? date('Y-m-d', strtotime($_POST['datum'])) : false;
         $kn         = ( isset($_POST['termek'])     and !empty($_POST['termek'])    ) ? $_POST['termek']                  : false;
         $telephely  = isset($branch)                                          ? $branch                       : false;
       
         if(!$datum or !$telephely or !$kn):
-          $err="Minden mezőt ki kell tölteni!";
+          $err="<p>Minden mezőt ki kell tölteni!</p>";
         elseif(date('Y-m-d') < $datum):
-          $err='A jövő csak sejthető, de teljes bizonyossággal nem tudhatunk semmit, kivéve, ha valaki a jövőből visszautazott, és megkért arra, hogy vidd fel ezt az értékesítést előre. Ennek viszont beláthatatlan következményei lehennének, ezért erre nincs is lehetőség. <iframe src="https://giphy.com/embed/RmfhMeDyN0bVYBFKNR" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/BTTF-back-to-the-future-bttf-one-RmfhMeDyN0bVYBFKNR">via GIPHY</a></p>';
+          $err='<p>A jövő csak sejthető, de teljes bizonyossággal nem tudhatunk semmit, kivéve, ha valaki a jövőből visszautazott, és megkért arra, hogy vidd fel ezt az értékesítést előre. Ennek viszont beláthatatlan következményei lehennének, ezért erre nincs is lehetőség. </p><iframe src="https://giphy.com/embed/RmfhMeDyN0bVYBFKNR" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>';
         endif;
      
       endif;
@@ -46,7 +46,7 @@ if( isset($_POST['save']) ):
     endif;
 
   else:
-    $err='Hiányzó/hibás sorszám. A sorszám csak számokat tartalmazhat. A kapott sorszám: <br><pre>'.$_POST['sorszam'].'</pre>';
+    $err='<p>Hiányzó/hibás sorszám. A sorszám csak számokat tartalmazhat. A kapott sorszám: </p><pre>'.$_POST['sorszam'].'</pre>';
   endif;
 
 
