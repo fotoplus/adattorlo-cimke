@@ -54,8 +54,7 @@ if( isset($_POST['save']) ):
     $stmt->bind_param('ssss', $sorszam, $datum, $kn, $telephely);
 
     if($stmt->execute()):
-      $msg = '<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke átadását <span class="bold">'.$datum.'</span> rögzítettük.</p>';
-      $msg .= '<p>Visszatrhetsz az <a href="/ertekesites" title="Vissza">előző felületre</a>.</p>';
+      $msg = '<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke átadását <span class="bold">'.$datum.'</span> dátummal rögzítettük.</p>';
     else:
       // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
       $msg = '<p>Sajnálatos módon valami nem sikerült, az adatbázis válasza: '.$stmt->errorCode().'</p>';
@@ -64,6 +63,7 @@ if( isset($_POST['save']) ):
     echo <<<HTML
 
       <div class="msg rounded-main border-main">$msg</div>
+      <p><a href="/ertekesites" title="Vissza">Vissza</a></p>
 
     HTML;
 
