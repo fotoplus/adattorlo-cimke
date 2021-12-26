@@ -69,15 +69,7 @@ if( isset($_POST['save']) ):
 
   else:
     echo <<<HTML
-      <div class="error rounded-main"> 
-       $err 
-       <pre>
-        Dátum: $_POST['datum']
-        Sorszám: $_POST['sorszam']
-        Termék: $_POST['termek']
-        Telephely: $branch
-       </pre>
-      </div>
+      <div class="error rounded-main"> $err </div>
       <a href="/ertekesites">Vissza</a>
     HTML;
   endif;
