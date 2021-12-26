@@ -10,6 +10,7 @@
             <li><a href="/feltoltes/cimke">Új címke intervallum</a></li>
           </ul>
         </nav>
+        <a href="/">Vissza</a>
       <?php
     break;
     case "jegyzek":
