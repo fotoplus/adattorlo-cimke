@@ -37,6 +37,7 @@ if( isset($_POST['save']) ):
       
         if(!$datum or !$telephely or !$kn):
           $err="Minden mezőt ki kell tölteni!";
+          die($datum . ' ---- ' . $kn . ' ---- '.$telephely );
         endif;
      
       endif;
