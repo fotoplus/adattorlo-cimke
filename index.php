@@ -50,7 +50,7 @@ endif;
   </head>
 
   <body>
-    <![if !IE]>
+    <![if IE]>
       <div id="top-allert"">Ez az oldal Internet Explorer böngészővel nem igazán használható, használj valami mást.</div>
     <![endif]>
 
