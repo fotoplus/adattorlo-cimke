@@ -54,7 +54,7 @@ else:
 
   <form method="post" action="/ertekesites" autocomplete="off" >
     <fieldset>
-        <legend>Új értékesítés <br> <?php echo $branch; ?> </legend>
+        <legend>Új értékesítés</legend>
 
         <label for="datum">Dátum</label>
         <input name="datum" type="date" value="<?php print(date('Y-m-d')); ?>" required>

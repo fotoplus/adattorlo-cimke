@@ -22,7 +22,7 @@ body {
 
 main {
   background-color: white;
-  border: 1px solid #afafaf;
+  border: 1px solid #f3f3f3;
   margin: 25px auto;
   width: 90%;
   max-width: 500px;
@@ -216,3 +216,18 @@ h1 {
   padding: 3px 3px 3px 3px;
 }
 
+#branch {
+  position: fixed;
+  top:25px;
+  left:0px;
+  width:10px;
+  padding: 5px 5px 5px 5px;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+#branch:hover {
+  width:auto;
+}

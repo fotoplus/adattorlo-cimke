@@ -51,7 +51,7 @@ endif;
   </head>
 
   <body>
-
+      <div id="branch"><?php echo $branch; ?></div>
       <main class="main-center rounded-main">
         <?php
           if($allow) {
