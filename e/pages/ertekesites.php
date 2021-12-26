@@ -15,10 +15,7 @@ else:
 
   <form method="post" action="/ertekesites" autocomplete="off" >
     <fieldset>
-        <legend>Új értékesítés</legend>
-
-        <label for="telephely">Telephely</table>
-        <p><?php echo $branch; ?></p>
+        <legend>Új értékesítés <br> <?php echo $branch; ?> </legend>
 
         <label for="datum">Dátum</label>
         <input name="datum" type="date" value="<?php print(date('Y-m-d')); ?>" required>
