@@ -14,16 +14,16 @@ switch($segments[1]):
     $result = $mysqli->query($query);
     echo '<table>';
     while($row = $result->fetch_assoc()) {
-      echo <<<HTML
+      $vtsz= substr($ro['kn'], 0, 4);
+      echo ('
         <tr>
-            <td>$row['cimke']</td>
-            <td>$row['datum']</td>
-            <td>substr($row['kn'], 0, 4)</td>
-            <td>$row['telephely']</td>
-        </tr>
-      HTML;
-
+            <td>'.$row['cimke'].'</td>
+            <td>'.$row['datum'].'</td>
+            <td>'.$vtsz.'</td>
+            <td>'.$row['telephely'].'</td>
+        </tr>');
     }
+    
     echo '</table>';
     echo '<a href="/" class="space">Vissza</a>';
   break;
