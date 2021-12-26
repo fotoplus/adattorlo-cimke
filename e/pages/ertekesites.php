@@ -32,12 +32,11 @@ if( isset($_POST['save']) ):
         $err='A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.';
       else:
         $datum      = ( isset($_POST['datum'])  and !empty($_POST['datum']) ) ? date('Y-m-d', strtotime($_POST['datum'])) : false;
-        $kn         = ( isset($_POST['kn'])     and !empty($_POST['kn'])    ) ? $_POST['kn']                  : false;
+        $kn         = ( isset($_POST['termek'])     and !empty($_POST['termek'])    ) ? $_POST['termek']                  : false;
         $telephely  = isset($branch)                                          ? $branch                       : false;
       
         if(!$datum or !$telephely or !$kn):
           $err="Minden mezőt ki kell tölteni!";
-          die($datum . ' ---- ' . $kn . ' ---- '.$telephely );
         endif;
      
       endif;
@@ -70,7 +69,15 @@ if( isset($_POST['save']) ):
 
   else:
     echo <<<HTML
-      <div class="error rounded-main"> $err </div>
+      <div class="error rounded-main"> 
+       $err 
+       <pre>
+        Dátum: $_POST['datum']
+        Sorszám: $_POST['sorszam']
+        Termék: $_POST['termek']
+        Telephely: $branch
+       </pre>
+      </div>
       <a href="/ertekesites">Vissza</a>
     HTML;
   endif;
