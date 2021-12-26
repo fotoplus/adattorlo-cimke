@@ -2,12 +2,51 @@
 
 if( isset($_POST['save']) ):
 
-  $sorsazm    = (!empty($_POST['sorszam']) and is_num($_POST['sorszam'])) ? $_POST['sorszam'] : false;
+  if(
+    isset($_POST['sorszam'])
+    and
+    !empty($_POST['sorszam'])
+  ):
+    $sorszam = str_replace('ö', 0, $_POST['sorszam']);
+    $sorszam = is_num($sorszam) ? $sorszam : false;
+  else:
+    $sorszam=false;
+  endif;
 
-  $query = sprintf('SELECT * FROM `ertekesites` WHERE cimke="%s"',
-  $mysqli->real_escape_string($sorszam));
-  $result_email_chk = $mysqli->query($query_email_chk);
-  $email_count = $result_email_chk->num_rows;
+
+  if($sorszam):
+    $query = sprintf('SELECT * FROM `ertekesites` WHERE `sorszam=`"%s"', $mysqli->real_escape_string($sorszam));
+    $result = $mysqli->query($query);
+    $count = $result->num_rows;
+
+    if($count > 0):
+      $err='Ez a sorszámú címke már ki lett adva. Egy címke csak egy alkalommal adható ki.';
+    else:
+      $query = sprintf('SELECT * FROM `cimke` WHERE `sorszam`="%s"', $mysqli->real_escape_string($sorszam));
+      $result = $mysqli->query($query);
+      $count = $result->num_rows;
+
+      if($count < 1):
+        $err='Ez a címke nem szerepel a jegyzékben, az nem lett még felvíve vagy nem ehhez a céghez tartozik.';
+      elseif($count > 1):
+        $err='Ez a címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.'
+      endif;
+  
+    endif;
+
+  else:
+    $err='Hiányzó/hibás sorszám. A sorszám csak számokat tartalmazhat.';
+  endif;
+
+
+  if(!$err) {
+
+  } else {
+    echo <<<HTML
+      <div id="error"> . $err . </div>
+      <a href="/ertekesites">Vissza</a>
+    HTML;
+  }
 
 else:
 

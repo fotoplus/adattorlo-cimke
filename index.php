@@ -5,6 +5,7 @@ require_once ('e/modules/mysql/mysql.php');
 require_once ('e/modules/accesscontrol/ipcheck.php');
 
 $msg=false;
+$err=false;
 $log=false;
 
 $pages_dir = './e/pages/';
