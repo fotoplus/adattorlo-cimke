@@ -218,9 +218,10 @@ h1 {
 
 #branch {
   position: fixed;
-  top:25px;
+  top:0px;
   left:0px;
   width:10px;
+  border-right:15px solid black;
   padding: 5px 5px 5px 5px;
   overflow: hidden;
   background-color: black;
