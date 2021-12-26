@@ -14,7 +14,7 @@ switch($segments[1]):
     $result = $mysqli->query($query);
     echo '<table>';
     while($row = $result->fetch_assoc()) {
-      $vtsz= substr($ro['kn'], 0, 4);
+      $vtsz= substr($row['kn'], 0, 4);
       echo ('
         <tr>
             <td>'.$row['cimke'].'</td>
@@ -23,7 +23,7 @@ switch($segments[1]):
             <td>'.$row['telephely'].'</td>
         </tr>');
     }
-    
+
     echo '</table>';
     echo '<a href="/" class="space">Vissza</a>';
   break;
