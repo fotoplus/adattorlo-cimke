@@ -8,7 +8,7 @@ if( isset($_POST['save']) ):
     !empty($_POST['sorszam'])
   ):
     $sorszam = str_replace('ö', 0, $_POST['sorszam']);
-    $sorszam = is_num($sorszam) ? $sorszam : false;
+    $sorszam = is_numeric($sorszam) ? $sorszam : false;
   else:
     $sorszam=false;
   endif;
