@@ -11,17 +11,18 @@ Egyszerűen követhetővé teszi a kódokat tartamazó cimkék nyilvántartásá
 
 *A rendszer a Fotoplus Kft. részére készült saját, belső felhasználási céllal, ugyanakkor szabadon felhasználható és módosítható bárki számára. Az esetleges hibás működésért felelősséget nem vállalunk.*
 
-*(A rendszer jelenleg szégyenletes módon procedurális, mert nem volt idő megérteni még az objektumorientált programozást.)*
+
 
 ---
 
 **Kapcsolódó:**
 
-726/2020. (XII. 31.) Korm. rendelet az adatok végleges hozzáférhetetlenné tételét lehetővé tevő alkalmazás biztosításával kapcsolatos eljárási szabályok meghatározásáról
+726/2020. (XII. 31.) Korm. rendelet az adatok végleges hozzáférhetetlenné tételét lehetővé tevő alkalmazás biztosításával kapcsolatos eljárási szabályok meghatározásáról<br>
 [https://net.jogtar.hu/jogszabaly?docid=A2000726.KOR](https://net.jogtar.hu/jogszabaly?docid=A2000726.KOR)
 
-Véglegestörlés weboldal
+Nemzeti Média és Hírközlési Minisztérium<br>
+[https://nmhh.hu/veglegestorles](https://nmhh.hu/veglegestorles)
+
+Véglegestörlés weboldal<br>
 [https://veglegestorles.hu](https://veglegestorles.hu)
 
-NMHH
-[https://nmhh.hu/veglegestorles](https://nmhh.hu/veglegestorles)

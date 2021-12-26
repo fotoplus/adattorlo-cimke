@@ -16,7 +16,7 @@
         <input name="sorszam" type="text" value="" placeholder="Olvasd be a vonalkódot" required>
 
         <label>Termék</label>
-
+        
         
         
 

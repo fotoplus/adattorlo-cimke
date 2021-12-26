@@ -51,11 +51,17 @@ endif;
 
   <body>
 
-    <?php
-      if($allow) {
-        include $page['file'];
-      }
-    ?>
+
+        <?php
+          if($allow) {
+            include $page['file'];
+          }
+        ?>
+
+
+      <footer>
+        <a href="https://github.com/borbasmatyas">@borbasmatyas</a> Repo: <a href="https://github.com/fotoplus/adattorlo-cimke">adattorlo-cimke</a>
+      </footer>
 
     <!-- Scriptek -->  
       <script src="scripts/vendor/jquery/jquery-3.5.1.min.js"></script>
