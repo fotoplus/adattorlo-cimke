@@ -38,7 +38,7 @@ if( isset($_POST['save']) ):
         if(!$datum or !$telephely or !$kn):
           $err="Minden mezőt ki kell tölteni!";
         elseif(date('Y-m-d') < $datum):
-          $err="A jövő csak sejthető, de teljes bizonyossággal nem tudhatunk semmit, kivéve, ha valaki a jövőből visszautazott, és megkért arra, hogy vidd fel ezt az értékesítést előre. Ennek viszont beláthatatlan következményei lehennének, ezért erre nincs is lehetőség.";
+          $err='A jövő csak sejthető, de teljes bizonyossággal nem tudhatunk semmit, kivéve, ha valaki a jövőből visszautazott, és megkért arra, hogy vidd fel ezt az értékesítést előre. Ennek viszont beláthatatlan következményei lehennének, ezért erre nincs is lehetőség. <iframe src="https://giphy.com/embed/RmfhMeDyN0bVYBFKNR" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/BTTF-back-to-the-future-bttf-one-RmfhMeDyN0bVYBFKNR">via GIPHY</a></p>';
         endif;
      
       endif;
