@@ -20,16 +20,25 @@ if( isset($_POST['save']) ):
     $count = $result->num_rows;
 
     if($count > 0):
-      $err='A(z) '.$sorszam.' sorszámú címke már ki lett adva. Egy címke csak egy alkalommal adható ki.';
+      $err='A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke már ki lett adva. Egy címke csak egy alkalommal adható ki.';
     else:
       $query = sprintf('SELECT * FROM `cimke` WHERE `sorszam`="%s"', $mysqli->real_escape_string($sorszam));
       $result = $mysqli->query($query);
       $count = $result->num_rows;
 
       if($count < 1):
-        $err='A(z) '.$sorszam.' sorszámú címke nem szerepel a jegyzékben, az nem lett még felvíve vagy nem ehhez a céghez tartozik.';
+        $err='A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke nem szerepel a jegyzékben, az nem lett még felvíve vagy nem ehhez a céghez tartozik.';
       elseif($count > 1):
-        $err='A(z) '.$sorszam.' sorszámú címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.';
+        $err='A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.';
+      else:
+        $datum      = ( isset($_POST['datum'])  and !empty($_POST['datum']) ) ? date('Y-m-d', $_POST['date']) : false;
+        $kn         = ( isset($_POST['kn'])     and !empty($_POST['kn'])    ) ? $_POST['kn']                  : false;
+        $telephely  = isset($branch)                                          ? $branch                       : false;
+      
+        if(!$datum or !$telephely or !$kn):
+          $err="Minden mezőt ki kell tölteni!";
+        endif;
+     
       endif;
   
     endif;
@@ -39,14 +48,31 @@ if( isset($_POST['save']) ):
   endif;
 
 
-  if(!$err) {
+  if(!$err):
 
-  } else {
+    $stmt = $mysqli->prepare('INSERT INTO `ertekesites`(`sorszam`, `datum`, `kn`, `telephely`) VALUES (?, ?, ?, ?)');
+    $stmt->bind_param('ssss', $sorszam, $datum, $kn, $telephely);
+
+    if($stmt->execute()):
+      $msg = '<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke átadását <span class="bold">'.$datum.'</span> rögzítettük.</p>';
+      $msg .= '<p>Visszatrhetsz az <a href="/ertekesites" title="Vissza">előző felületre</a>.</p>';
+    else:
+      // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
+      $msg = '<p>Sajnálatos módon valami nem sikerült, az adatbázis válasza: '.$stmt->errorCode().'</p>';
+    endif;
+
+    echo <<<HTML
+
+      <div class="msg rounded-main border-main">$msg</div>
+
+    HTML;
+
+  else:
     echo <<<HTML
       <div class="error rounded-main"> $err </div>
       <a href="/ertekesites">Vissza</a>
     HTML;
-  }
+  endif;
 
 else:
 
