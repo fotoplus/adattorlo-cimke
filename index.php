@@ -52,7 +52,7 @@ endif;
 
   <body>
 
-      <main class="main-center rounded-main border-main">
+      <main class="main-center rounded-main">
         <?php
           if($allow) {
             include $page['file'];
