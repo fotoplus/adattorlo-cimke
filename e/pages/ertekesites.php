@@ -20,22 +20,22 @@ if( isset($_POST['save']) ):
     $count = $result->num_rows;
 
     if($count > 0):
-      $err='Ez a sorszámú címke már ki lett adva. Egy címke csak egy alkalommal adható ki.';
+      $err='A(z) '.$sorszam.' sorszámú címke már ki lett adva. Egy címke csak egy alkalommal adható ki.';
     else:
       $query = sprintf('SELECT * FROM `cimke` WHERE `sorszam`="%s"', $mysqli->real_escape_string($sorszam));
       $result = $mysqli->query($query);
       $count = $result->num_rows;
 
       if($count < 1):
-        $err='Ez a címke nem szerepel a jegyzékben, az nem lett még felvíve vagy nem ehhez a céghez tartozik.';
+        $err='A(z) '.$sorszam.' sorszámú címke nem szerepel a jegyzékben, az nem lett még felvíve vagy nem ehhez a céghez tartozik.';
       elseif($count > 1):
-        $err='Ez a címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.';
+        $err='A(z) '.$sorszam.' sorszámú címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.';
       endif;
   
     endif;
 
   else:
-    $err='Hiányzó/hibás sorszám. A sorszám csak számokat tartalmazhat.';
+    $err='Hiányzó/hibás sorszám. A sorszám csak számokat tartalmazhat. A kapott sorszám: <pre>'.$sorszam.'</pre>';
   endif;
 
 
@@ -43,7 +43,7 @@ if( isset($_POST['save']) ):
 
   } else {
     echo <<<HTML
-      <div id="error"> . $err . </div>
+      <div id="error"> $err </div>
       <a href="/ertekesites">Vissza</a>
     HTML;
   }
