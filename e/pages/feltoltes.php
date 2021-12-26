@@ -1,5 +1,3 @@
-<div id="main-center" class="rounded-main border-main">
-
 
   <?php
   $segments[1] = isset($segments[1]) ? $segments[1] : false;
@@ -165,4 +163,4 @@
 
   ?>
 
-</div>
+
