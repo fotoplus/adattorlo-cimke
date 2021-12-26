@@ -16,7 +16,7 @@
         <input name="sorszam" type="text" value="" placeholder="Olvasd be a vonalkódot" required>
 
         <label>Termék</label>
-        
+        <div class="radio-group">
         <?php
           $query = ('SELECT * FROM `termek` ORDER BY `nev` ASC');
           $result = $mysqli->query($query);
@@ -27,6 +27,7 @@
                 ');
           }
         ?>
+        </div>
 
         <button name="save" value="uj" >Mentés</button>
         <a href="/ertekesites" title="Mentés nélküli visszalépés" class="space" >Vissza</a>
