@@ -31,7 +31,7 @@ if( isset($_POST['save']) ):
       elseif($count > 1):
         $err='A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.';
       else:
-        $datum      = ( isset($_POST['datum'])  and !empty($_POST['datum']) ) ? date('Y-m-d', $_POST['date']) : false;
+        $datum      = ( isset($_POST['datum'])  and !empty($_POST['datum']) ) ? date('Y-m-d', $_POST['datum']) : false;
         $kn         = ( isset($_POST['kn'])     and !empty($_POST['kn'])    ) ? $_POST['kn']                  : false;
         $telephely  = isset($branch)                                          ? $branch                       : false;
       
