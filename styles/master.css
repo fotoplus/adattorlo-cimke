@@ -29,23 +29,29 @@ main {
 }
 
 footer {
-  margin: 25px auto;
+  margin: 5px auto;
   width: 90%;
   max-width: 500px;
   text-align: center;
 }
 
-footer img {
-  vertical-align: middle;
-}
-
 footer a {
-  color:rgba(0, 0, 0, 1);
+  color:rgba(0, 0, 0, 0.5);
+  text-decoration: none;
 }
 
-footer a:hover {
-  color:rgba(0, 0, 0, 0);
-}
+    footer a img {
+      vertical-align: middle;
+      opacity: 0.5;
+    }
+
+  footer a:hover {
+    color:rgba(0, 0, 0, 1);
+  }
+
+  footer a:hover img {
+    opacity: 1;
+  }
 
 
 p {
