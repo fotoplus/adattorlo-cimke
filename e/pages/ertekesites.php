@@ -21,11 +21,9 @@
         $query = ('SELECT * FROM `termek` ORDER BY `nev` ASC');
         $result = $mysqli->query($query);
         while($termekek = $result->fetch_assoc()) {
-            $kn_szam=substr($termekek['kn'], 0, 4);
-            print('
-
-              <input id="termek' . $termekek['id'] . '" type="radio" name="termek" value="' . $termekek['id'] .'" label="'.$termekek['nev'].'" title="'.$kn_szam.'" >
-              ');
+            $vtsz=substr($termekek['kn'], 0, 4);
+            $kn_szam = $vtsz . ' ' . substr($termekek['kn'], 3, 2) . ' '. substr($termekek['kn'], 5, 2);
+            echo('<input id="termek' . $termekek['id'] . '" type="radio" name="termek" value="' . $vtsz .'" label="'.$termekek['nev'].'" title="'.$kn_szam.'" required>');
         }
       ?>
       </div>
