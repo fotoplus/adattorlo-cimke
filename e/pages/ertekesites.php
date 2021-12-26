@@ -29,7 +29,7 @@ if( isset($_POST['save']) ):
       if($count < 1):
         $err='Ez a címke nem szerepel a jegyzékben, az nem lett még felvíve vagy nem ehhez a céghez tartozik.';
       elseif($count > 1):
-        $err='Ez a címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.'
+        $err='Ez a címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.';
       endif;
   
     endif;
