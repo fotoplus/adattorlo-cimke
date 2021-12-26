@@ -65,7 +65,7 @@ else:
         <label>Termék</label>
         <div class="radio-group">
           <?php
-            $query = ('SELECT * FROM `termek` ORDER BY `nev` ASC');
+            $query = ('SELECT * FROM `termek` ORDER BY `id` ASC');
             $result = $mysqli->query($query);
             while($termekek = $result->fetch_assoc()) {
                 $kn_szam = substr($termekek['kn'], 0, 4) . ' ' . substr($termekek['kn'], 3, 2) . ' '. substr($termekek['kn'], 5, 2);
