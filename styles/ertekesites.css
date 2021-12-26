@@ -1,25 +1,2 @@
-input[type="radio"] {
-  appearance: none;
-  display:inline-block;
-  width:auto;
-  margin: 1rem auto;
-  padding: 1rem 1em 1em 1em;
-  background-color: #ffffff;
-  border: 1px solid #909090;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  color: #000000;  
-}
 
-input[type="radio"]::before {
-  content:attr(label);
-
-}
-
-input[type="radio"]:checked  {
-  background-color: #1f5887;
-  border: 1px solid #1f5887;
-  color: #ffffff;  
-}
 
