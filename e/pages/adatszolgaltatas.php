@@ -12,15 +12,16 @@ switch($segments[1]):
   case "teljes-lista":
     $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` WHERE 1');
     $result = $mysqli->query($query);
-    echo '<table style="border:1px solid gray;">';
+    echo '<a href="/" class="space">Vissza</a>';
+    echo '<table style="border:1px solid #ccc; text-align: center;" width="100%">';
     while($row = $result->fetch_assoc()) {
       $vtsz= substr($row['kn'], 0, 4);
       echo ('
         <tr>
-            <td style="border:1px solid gray;">'.$row['cimke'].'</td>
-            <td style="border:1px solid gray;">'.$row['datum'].'</td>
-            <td style="border:1px solid gray;">'.$vtsz.'</td>
-            <td style="border:1px solid gray;">'.$row['telephely'].'</td>
+            <td style="border:1px solid #ccc;">'.$row['cimke'].'</td>
+            <td style="border:1px solid #ccc;">'.$row['datum'].'</td>
+            <td style="border:1px solid #ccc;">'.$vtsz.'</td>
+            <td style="border:1px solid #ccc;">'.$row['telephely'].'</td>
         </tr>');
     }
 
