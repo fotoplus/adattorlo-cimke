@@ -43,7 +43,7 @@ if( isset($_POST['save']) ):
 
   } else {
     echo <<<HTML
-      <div id="error"> $err </div>
+      <div class="error rounded-main"> $err </div>
       <a href="/ertekesites">Vissza</a>
     HTML;
   }

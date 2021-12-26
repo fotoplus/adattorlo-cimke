@@ -22,6 +22,7 @@ body {
 
 main {
   background-color: white;
+  border-color: #909090;
   margin: 25px auto;
   width: 90%;
   max-width: 500px;
@@ -192,11 +193,11 @@ h1 {
 
 }
 
-#error {
+.error {
   font-size: 1rem;
   color: #ffffff;
-  background-color: #9e0000;
-  border: 5px #9e0000 solid;
+  background-color: #eeeeee;
+  border: 1px #9e0000 solid;
   padding: 10px 10px 10px 10px;
   margin-top: 25px;
   margin-bottom: 25px;
