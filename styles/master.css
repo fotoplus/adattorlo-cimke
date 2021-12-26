@@ -39,6 +39,14 @@ footer img {
   vertical-align: middle;
 }
 
+footer a {
+  color:rgba(0, 0, 0, 1);
+}
+
+footer a:hover {
+  color:rgba(0, 0, 0, 0);
+}
+
 
 p {
   margin-bottom: 0.5rem;
