@@ -29,12 +29,8 @@
                 <input id="termek' . $termekek['id'] . '" type="radio" name="termek" value="' . $termekek['id'] .'" >
                 <label for="termek' . $termekek['id'] . '">' .  $termekek['nev'] . ' <span class="small-gray ">('.$kn_szam.')</span> </label>
                 </p>');
-            endif;
           }
         ?>
-        
-
-
 
         <button name="save" value="uj" >Mentés</button>
         <a href="/ertekesites" title="Mentés nélküli visszalépés" class="space" >Vissza</a>
