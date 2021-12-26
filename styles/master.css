@@ -35,6 +35,10 @@ footer {
   text-align: center;
 }
 
+footer img {
+  vertical-align: middle;
+}
+
 
 p {
   margin-bottom: 0.5rem;
