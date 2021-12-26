@@ -65,14 +65,14 @@ if( isset($_POST['save']) ):
     echo <<<HTML
 
       <div class="msg rounded-main border-main">$msg</div>
-      <p><a href="/ertekesites" title="Vissza">Vissza</a></p>
+      <p><a href="/ertekesites" title="Vissza" class="space">Vissza</a></p>
 
     HTML;
 
   else:
     echo <<<HTML
       <div class="error rounded-main"> $err </div>
-      <a href="/ertekesites">Vissza</a>
+      <a href="/ertekesites" class="space">Vissza</a>
     HTML;
   endif;
 
