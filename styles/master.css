@@ -140,7 +140,6 @@ button {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-
 }
 
 .space {
@@ -231,3 +230,17 @@ h2 {
   color: white;
   font-size: 0.8rem;
 }
+
+
+nav ul li a {
+  display: block;
+  width:100%;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  background-color: gray;
+  color: black;
+}
+  nav ul li a:hover {
+    background-color: black;
+    color: white;
+  }
