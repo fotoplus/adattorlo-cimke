@@ -15,7 +15,7 @@ if( isset($_POST['save']) ):
 
 
   if($sorszam):
-    $query = sprintf('SELECT * FROM `ertekesites` WHERE `sorszam=`"%s"', $mysqli->real_escape_string($sorszam));
+    $query = sprintf('SELECT * FROM `ertekesites` WHERE `sorszam`="%s"', $mysqli->real_escape_string($sorszam));
     $result = $mysqli->query($query);
     $count = $result->num_rows;
 
