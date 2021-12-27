@@ -2,7 +2,7 @@
 
 <nav>
   <ul>
-    <li><a href="/feltoltes">Értékesítés</a></li>
+    <li><a href="/ertekesites">Értékesítés</a></li>
     <li><a href="/feltoltes">Új címkék felvitele</a></li>
     <li><a href="/adatszolgaltatas">Adatszolgáltatás</a></li>
   </ul>
