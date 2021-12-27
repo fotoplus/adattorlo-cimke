@@ -1,4 +1,4 @@
-<h1>Adattörlő beváltókód címke nyilvánatrtás</h1>
+<h1>Adattörlő beváltókód címke nyilvántartás</h1>
 
 <nav>
   <ul>
