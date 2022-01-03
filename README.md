@@ -20,7 +20,7 @@ Egyszerűen követhetővé teszi a kódokat tartamazó cimkék nyilvántartásá
 726/2020. (XII. 31.) Korm. rendelet az adatok végleges hozzáférhetetlenné tételét lehetővé tevő alkalmazás biztosításával kapcsolatos eljárási szabályok meghatározásáról<br>
 [https://net.jogtar.hu/jogszabaly?docid=A2000726.KOR](https://net.jogtar.hu/jogszabaly?docid=A2000726.KOR)
 
-Nemzeti Média és Hírközlési Minisztérium<br>
+Nemzeti Média és Hírközlési Hatóság<br>
 [https://nmhh.hu/veglegestorles](https://nmhh.hu/veglegestorles)
 
 Véglegestörlés weboldal<br>
