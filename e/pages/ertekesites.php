@@ -87,9 +87,6 @@ else:
         <label for="datum">Dátum</label>
         <input name="datum" type="date" value="<?php print(date('Y-m-d')); ?>" required>
 
-        <label for="sorszam">Címke sorszáma</label>
-        <input name="sorszam" type="text" value="" placeholder="Olvasd be a vonalkódot" required>
-
         <label>Termék</label>
         <div class="radio-group">
           <?php
@@ -101,6 +98,9 @@ else:
             }
           ?>
         </div>
+
+        <label for="sorszam">Címke sorszáma</label>
+        <input name="sorszam" type="text" value="" placeholder="Olvasd be a vonalkódot" required>
 
         <button name="save" value="uj" >Mentés</button>
         <a href="/" title="Mentés nélküli visszalépés" class="space" >Vissza</a>
