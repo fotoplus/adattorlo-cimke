@@ -63,7 +63,6 @@ if( isset($_POST['save']) ):
     endif;
 
     echo <<<HTML
-
       <div class="msg rounded-main border-main">$msg</div>
       <p><a href="/ertekesites" title="Vissza" class="space">Vissza</a></p>
 
