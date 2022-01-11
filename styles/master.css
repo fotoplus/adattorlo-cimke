@@ -104,9 +104,9 @@ option {
 }
 
 .radio-group {
-  margin: 0em 0 1.5rem 0;
+  margin: 0 0 1.5rem 0;
   padding: 0.8rem;
-  width: calc(100% - 20px);
+  width: 100%;
 }
 
 input[type="radio"] {
