@@ -41,7 +41,7 @@ switch($segments[1]):
     
     echo '<a href="/" class="space">Vissza</a>';
   break;
-  case "teljes-lista":
+  case "teljes-lekerdezes":
     $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` WHERE 1');
     $result = $mysqli->query($query);
     echo '<a href="/" class="space">Vissza</a>';
