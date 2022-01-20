@@ -21,10 +21,9 @@ switch($segments[1]):
   case "jegyzek-lista":
     $query=('SELECT `id`, `datum`, `iktatoszam` FROM `atadas-atvetel` ORDER BY `datum` ASC');
     $result = $mysqli->query($query);
-    echo '<a href="/" class="space">Vissza</a>';
+    echo '<a href="/adatszolgaltatas/" class="space">Vissza</a>';
     echo '<table style="border:1px solid #ccc; text-align: center;" width="100%">';
     while($row = $result->fetch_assoc()) {
-      $vtsz= substr($row['kn'], 0, 4);
       echo ('
         <tr>
             <td style="border:1px solid #ccc;">'.$row['iktatoszam'].'</td>
@@ -34,7 +33,7 @@ switch($segments[1]):
     }
 
     echo '</table>';
-    echo '<a href="/" class="space">Vissza</a>';
+    echo '<a href="/adatszolgaltatas/" class="space">Vissza</a>';
 
   break;
   case "jegyzek-lekerdezes":
