@@ -4,10 +4,10 @@ $segments[1] = isset($segments[1]) ? $segments[1] : false;
 switch($segments[1]):
   default:
     ?>
-
+      <p>Itt csak a teljes lekérdezés "működik".</p>
       <nav>  
           <ul>    
-            <li><a href="/adatszolgaltatas/jegyzek-lista" class="space">Jegyzékek listázása</a> -- Fejlesztés alatt!</li>
+            <li><a href="/adatszolgaltatas/jegyzek-lista" class="space">Jegyzékek listázása</a></li>
             <li><a href="/adatszolgaltatas/teljes-lekerdezes" class="space">Teljes lekérdezés indítása</a></li>
           </ul>
           <a href="/" class="space">Vissza</a>
@@ -21,6 +21,7 @@ switch($segments[1]):
   case "jegyzek-lista":
     $query=('SELECT `id`, `datum`, `iktatoszam` FROM `atadas-atvetel` ORDER BY `datum` ASC');
     $result = $mysqli->query($query);
+    echo '<p>Ez a funkció még nem működik!</p>';
     echo '<a href="/adatszolgaltatas/" class="space">Vissza</a>';
     echo '<table style="border:1px solid #ccc; text-align: center;" width="100%">';
     while($row = $result->fetch_assoc()) {
