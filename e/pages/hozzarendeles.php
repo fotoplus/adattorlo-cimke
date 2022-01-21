@@ -10,6 +10,7 @@
 
           </ul>
           <a href="/" class="space">Vissza</a>
+          
         </nav>
 
       <?php
