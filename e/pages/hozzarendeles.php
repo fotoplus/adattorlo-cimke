@@ -39,6 +39,8 @@
               <label for="veg">Sorszámok vége</label>
               <input name="veg" type="number" value="<?php print $cimke['veg']; ?>" required>
 
+              <button name="save" value="hozzarendeles" >Hozzárendelés</button>
+              
               <a href="/" title="Mentés nélküli visszalépés" class="space" >Vissza</a>
           </fieldset>
         </form>
