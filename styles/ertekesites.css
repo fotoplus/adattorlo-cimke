@@ -1,2 +1,7 @@
 
 
+input[type="radio"]:disabled {
+  cursor: not-allowed;
+  border-color: gray !important;
+  color: gray !important;
+}
