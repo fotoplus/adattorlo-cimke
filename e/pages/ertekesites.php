@@ -93,7 +93,12 @@ else:
             $result = $mysqli->query($query);
             while($termekek = $result->fetch_assoc()) {
                 $kn_szam = substr($termekek['kn'], 0, 4) . ' ' . substr($termekek['kn'], 3, 2) . ' '. substr($termekek['kn'], 5, 2);
-                echo('<input id="termek' . $termekek['id'] . '" type="radio" name="termek" value="' . $termekek['kn'] .'" label="'.$termekek['nev'].'" title="'.$kn_szam.'" required>');
+                if($termekek['id'] == 1):
+                  // A memóriakártyákat letiltjuk, jelen álláspont szerint nem kell adni hozzá címkét.
+                  echo('<input id="termek' . $termekek['id'] . '" type="radio" name="termek" value="' . $termekek['kn'] .'" label="'.$termekek['nev'].'" title="'.$kn_szam.'" disabled>');
+                else:
+                  echo('<input id="termek' . $termekek['id'] . '" type="radio" name="termek" value="' . $termekek['kn'] .'" label="'.$termekek['nev'].'" title="'.$kn_szam.'" required>');
+                endif;
             }
           ?>
         </div>
