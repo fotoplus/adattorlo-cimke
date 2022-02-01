@@ -53,7 +53,7 @@ switch($segments[1]):
         <td style="border:1px solid #ccc;">Doboz azonosító</td>
         <td style="border:1px solid #ccc;">Átadás dátuma</td>
         <td style="border:1px solid #ccc;">VTSZ</td>
-        <td style="border:1px solid #ccc;">Telephely <span style="red">(törlendő!)</span></td>
+        <td style="border:1px solid #ccc;">Telephely <span class="red">(törlendő!)</span></td>
     </tr>');
 
     while($row = $result->fetch_assoc()) {
