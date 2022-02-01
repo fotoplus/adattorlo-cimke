@@ -58,6 +58,7 @@
     break;
     case "cimke":
       $cimke['iktatoszam']   = ( isset($_POST['iktatoszam'])  and !empty($_POST['iktatoszam']) )  ? $_POST['iktatoszam']  : false;
+      $cimke['tszam']        = ( isset($_POST['tszam'])       and !empty($_POST['tszam'])      )  ? $_POST['tszam']       : false;
       $cimke['csomag']       = ( isset($_POST['csomag'])      and !empty($_POST['csomag'])     )  ? $_POST['csomag']      : false;
       $cimke['doboz']        = ( isset($_POST['doboz'])       and !empty($_POST['doboz'])      )  ? $_POST['doboz']       : false;
       $cimke['kezdet']       = ( isset($_POST['kezdet'])      and !empty($_POST['kezdet'])     )  ? $_POST['kezdet']      : false;
@@ -80,8 +81,8 @@
           $i=0;
           
           do {
-            $stmt = $mysqli->prepare('INSERT INTO `cimke` (`aid`, `csomag`, `doboz`, `sorszam`) VALUES (?, ?, ?, ?)');
-            $stmt->bind_param('ssss', $cimke['iktatoszam'], $cimke['csomag'], $cimke['doboz'], $sorszam);
+            $stmt = $mysqli->prepare('INSERT INTO `cimke` (`aid`, `tszam`, `csomag`, `doboz`, `sorszam`) VALUES (?, ?, ?, ?, ?)');
+            $stmt->bind_param('sssss', $cimke['iktatoszam'], $cimke['tszam'], $cimke['csomag'], $cimke['doboz'], $sorszam);
             if ( $stmt->execute() ) :
               $log .= 'A <span class="green">' . $sorszam . '</span> sorszámú címke hozzáadva.'.chr(13);
             else:
@@ -133,6 +134,9 @@
 
                 ?>
               </select>
+
+              <label for="tszam">A "T" jelű első szám a CSV-ből"</label>
+              <input name="tszam" type="number" value="<?php print $cimke['tszam']; ?>" required>
 
               <label for="csomag">A csomag azonosítószáma</label>
               <input name="csomag" type="number" value="<?php print $cimke['csomag']; ?>" required>

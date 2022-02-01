@@ -42,15 +42,27 @@ switch($segments[1]):
     echo '<a href="/" class="space">Vissza</a>';
   break;
   case "teljes-lekerdezes":
-    $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` WHERE 1');
+    $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` WHERE 1');
     $result = $mysqli->query($query);
     echo '<a href="/" class="space">Vissza</a>';
     echo '<table style="border:1px solid #ccc; text-align: center;" width="100%">';
+    echo ('
+    <tr>
+        <td style="border:1px solid #ccc;">Csomag azonosító</td>
+        <td style="border:1px solid #ccc;">Címke sorszáma</td>
+        <td style="border:1px solid #ccc;">Doboz azonosító</td>
+        <td style="border:1px solid #ccc;">Átadás dátuma</td>
+        <td style="border:1px solid #ccc;">VTSZ</td>
+        <td style="border:1px solid #ccc;">Telephely <span style="red">(törlendő!)</span></td>
+    </tr>');
+
     while($row = $result->fetch_assoc()) {
       $vtsz= substr($row['kn'], 0, 4);
       echo ('
         <tr>
+            <td style="border:1px solid #ccc;">t'.$row['tszam'].'/d'.$row['doboz'].'/cs'.$row['csomag'].'</td>
             <td style="border:1px solid #ccc;">'.$row['cimke'].'</td>
+            <td style="border:1px solid #ccc;">t'.$row['tszam'].'/d'.$row['doboz'].'</td>
             <td style="border:1px solid #ccc;">'.$row['datum'].'</td>
             <td style="border:1px solid #ccc;">'.$vtsz.'</td>
             <td style="border:1px solid #ccc;">'.$row['telephely'].'</td>
