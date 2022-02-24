@@ -101,7 +101,7 @@
                   while($telephely = $result->fetch_assoc()) {
                       echo('<input id="telephely' . $telephely['id'] . '" type="radio" name="telephely" value="' . $telephely['id'] .'" label="'.$telephely['name'].'" title="'.$telephely['name'].'" required>');
                   }
-                  echo('<input class="torles" type="radio" name="telephely" value="NULL" label="Elvétel / Törlés" title="Korábbi kapcsolat törlése" required>');
+                  echo('<!--input class="torles" type="radio" name="telephely" value="NULL" label="Elvétel / Törlés" title="Korábbi kapcsolat törlése" required-->');
                 ?>
               </div>
 
