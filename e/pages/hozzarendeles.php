@@ -43,16 +43,14 @@
               $err .='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke nem létezik.</p>';
             else:
               
-              $query_telephely_cimkek = sprintf('SELECT `id` FROM `telephely_cimkek` WHERE `cid`="%s"', $mysqli->real_escape_string($result_cimke['id']));
+              $query_telephely_cimkek = sprintf('SELECT `id` FROM `cimke` WHERE `sorszam`="%s" AND `tid` IS NOT NULL', $mysqli->real_escape_string($sorszam));
               $result_telephely_cimkek = $mysqli->query($query_telephely_cimke);
               $count_telephely_cimkek = $result_telephely_cimkek->num_rows;
               if($count_telephely_cimke != 0):
-                
-              else:
                 $err .='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke már hozzá lett rendelve egy telephelyhez.</p>';
               endif;
-
-              $stmt = $mysqli->prepare('INSERT INTO `cimke` (`tid`) VALUES (?)');
+               
+              $stmt = $mysqli->prepare('UPDATE `cimke` SET `tid` = ? WHERE `cimke`.`sorszam` = "'.$sorszam.'"');
               $stmt->bind_param('s', $telephely);
 
               if ( $stmt->execute() ) :
@@ -68,7 +66,7 @@
 
           } while($sorszam <= $veg);
 
-          $msg .= '<p>' . $i . ' címke hozzá lett rendelve a telephelyhez..</p>';
+          $msg .= '<p>' . $i . ' címke hozzá lett rendelve a telephelyhez.</p>';
           $msg .= '<p>Ha hibát írt ki, vissza kell vonni a műveletet.<br>Szükség esetén készíts képernyőképet és kérj segítséget!</p>';
           $cimke = false;
         else:
