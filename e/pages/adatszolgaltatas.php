@@ -42,7 +42,7 @@ switch($segments[1]):
     echo '<a href="/" class="space">Vissza</a>';
   break;
   case "teljes-lekerdezes":
-    $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` WHERE 1');
+    $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `tid` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` WHERE 1');
     $result = $mysqli->query($query);
     echo '<a href="/" class="space">Vissza</a>';
     echo '<table style="border:1px solid #ccc; text-align: center;" width="100%">';
@@ -65,7 +65,7 @@ switch($segments[1]):
             <td style="border:1px solid #ccc;">t'.$row['tszam'].'/d'.$row['doboz'].'</td>
             <td style="border:1px solid #ccc;">'.$row['datum'].'</td>
             <td style="border:1px solid #ccc;">'.$vtsz.'</td>
-            <td style="border:1px solid #ccc;">'.$row['telephely'].'</td>
+            <td style="border:1px solid #ccc;">'.$row['tid'].'</td>
         </tr>');
     }
 

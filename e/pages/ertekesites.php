@@ -52,7 +52,7 @@ if( isset($_POST['save']) ):
 
   if(!$err):
 
-    $stmt = $mysqli->prepare('INSERT INTO `ertekesites`(`sorszam`, `datum`, `kn`, `telephely`) VALUES (?, ?, ?, ?)');
+    $stmt = $mysqli->prepare('INSERT INTO `ertekesites`(`sorszam`, `datum`, `kn`, `tid`) VALUES (?, ?, ?, ?)');
     $stmt->bind_param('ssss', $sorszam, $datum, $kn, $telephely);
 
     if($stmt->execute()):
