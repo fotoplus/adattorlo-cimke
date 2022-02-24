@@ -54,7 +54,7 @@
               $stmt->bind_param('s', $telephely);
 
               if ( $stmt->execute() ) :
-                $log .= 'A <span class="green">' . $sorszam . '</span> sorszámú címke hozzáadva.'.chr(13);
+                $log .= 'A <span class="green">' . $sorszam . '</span> sorszámú címke hozzárendelve a telephelyhez.'.chr(13);
               else:
                 // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
                 $log .= '<span class="red">Hiba (' . $sorszam . '): '.$stmt->errorCode().'</span>'.chr(13);
@@ -82,6 +82,10 @@
               <?php
               if($log):
                 print '<pre id="log" class="rounded-main">' . $log . '</pre>';
+              endif;
+
+              if($error):
+                print '<pre id="log" class="rounded-main">' . $error . '</pre>';
               endif;
 
               if($msg):
