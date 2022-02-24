@@ -10,7 +10,7 @@
         $cimke['veg']     = isset($_POST['veg'])        ? $_POST['veg']         : false;
 
 
-        if($telephely and $kezdet and $veg):
+        if($telephely and $cimke['kezdet'] and $cimke['veg']):
           // Címke sorszám
           $sorszam=$cimke['kezdet'];
 
