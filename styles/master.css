@@ -278,3 +278,9 @@ nav ul li a {
   background-color: black;
   color: white;
 }
+
+.torles {
+  border-color: red;
+  color: red;
+  background-color: white;
+}
