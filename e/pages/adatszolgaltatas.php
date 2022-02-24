@@ -42,7 +42,7 @@ switch($segments[1]):
     echo '<a href="/" class="space">Vissza</a>';
   break;
   case "teljes-lekerdezes":
-    $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `tid`, `telephely`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephely` ON `ertekesites`.`tid` = `telephely`.`id`');
+    $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `tid`, `telephelyek`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephelyek` ON `ertekesites`.`tid` = `telephelyek`.`id`');
     $result = $mysqli->query($query);
     echo '<a href="/" class="space">Vissza</a>';
     echo '<table style="border:1px solid #ccc; text-align: center;" width="100%">';
