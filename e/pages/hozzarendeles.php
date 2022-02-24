@@ -80,13 +80,14 @@
           <fieldset>
               <legend>Címke intervallum telephelyhez rendelése</legend>
               <?php
-              if($log):
-                print '<pre id="log" class="rounded-main">' . $log . '</pre>';
-              endif;
-
               if($err):
                 print '<p class="bold">Hibák</p>';
                 print '<pre id="log" class="rounded-main">' . $err . '</pre>';
+              endif;
+
+              if($log):
+                print '<p class="bold">Eredmény</p>';
+                print '<pre id="log" class="rounded-main">' . $log . '</pre>';
               endif;
 
               if($msg):
