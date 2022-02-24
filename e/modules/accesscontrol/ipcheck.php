@@ -31,15 +31,5 @@ endif;
 
 
 
-/*
-
-if(!array_key_exists($_SERVER['REMOTE_ADDR'], $ip_allow_list)):
-   header('Location: '. REDIRECT_URL);
-   exit;
-else:
-    $branch = $ip_allow_list[$_SERVER['REMOTE_ADDR']];
-    $allow = true;
-endif;
-*/
 
 ?>
