@@ -84,8 +84,8 @@
                 print '<pre id="log" class="rounded-main">' . $log . '</pre>';
               endif;
 
-              if($error):
-                print '<pre id="log" class="rounded-main">' . $error . '</pre>';
+              if($err):
+                print '<pre id="log" class="rounded-main">' . $err . '</pre>';
               endif;
 
               if($msg):
