@@ -40,7 +40,7 @@
             $result_cimke = $mysqli->query($query_cimke);
             $count_cimke = $result_cimke->num_rows;
             if($count_cimke != 1):
-              $err .='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke nem létezik.</p>';
+              $err .='<p>A(z) <span class="red">'.$sorszam.'</span> sorszámú címke nem létezik.</p>';
             else:
               
               $query_telephely_cimkek = sprintf('SELECT `id` FROM `cimke` WHERE `sorszam`="%s" AND `tid` IS NOT NULL', $mysqli->real_escape_string($sorszam));
@@ -54,7 +54,7 @@
               $stmt->bind_param('s', $telephely);
 
               if ( $stmt->execute() ) :
-                $log .= 'A <span class="green">' . $sorszam . '</span> sorszámú címke hozzárendelve a telephelyhez.'.chr(13);
+                $log .= 'A(z) <span class="green">' . $sorszam . '</span> sorszámú címke hozzárendelve a telephelyhez.'.chr(13);
               else:
                 // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
                 $log .= '<span class="red">Hiba (' . $sorszam . '): '.$stmt->errorCode().'</span>'.chr(13);
@@ -85,6 +85,7 @@
               endif;
 
               if($err):
+                print '<p class="bold">Hibák</p>';
                 print '<pre id="log" class="rounded-main">' . $err . '</pre>';
               endif;
 
