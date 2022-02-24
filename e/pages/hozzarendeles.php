@@ -1,30 +1,57 @@
 
   <?php
+  /**
+   * Hozzárendelés
+   * 
+   * Címkét (címke-sorszámot) rendel hozzá telephelyhez.
+   * Ez az értékesítést nem befolyásolja, ezért nem is kötelező,
+   * viszont követhetőbb vele, hol hány (szabad) címke van.
+   * 
+   */
+
+  $err=false;
+  $log=false;
+  $msg=false;
+
   $segments[1] = isset($segments[1]) ? $segments[1] : false;
   switch($segments[1]):
     default:
       if( isset($_POST['save']) and $_POST['save'] == 'hozzarendeles' ):
 
-        $telephely        = isset($_POST['telephely'])  ? $_POST['telephely']   : false;
-        $cimke['kezdet']  = isset($_POST['kezdet'])     ? $_POST['kezdet']      : false;
-        $cimke['veg']     = isset($_POST['veg'])        ? $_POST['veg']         : false;
+        $telephely   = isset($_POST['telephely'])  ? $_POST['telephely']   : false;
+        $kezdet      = isset($_POST['kezdet'])     ? $_POST['kezdet']      : false;
+        $veg         = isset($_POST['veg'])        ? $_POST['veg']         : false;
 
 
-        if($telephely and $cimke['kezdet'] and $cimke['veg']):
+        if($telephely and $kezdet and $veg):
           // Címke sorszám
-          $sorszam=$cimke['kezdet'];
+          $sorszam=$kezdet;
 
           // Számláló
           $i=0;
           
           do {
-            $query = sprintf('SELECT * FROM `` WHERE `sorszam`="%s"', $mysqli->real_escape_string($sorszam));
-            $result = $mysqli->query($query);
-            $count = $result->num_rows;
-        
-            if($count != 1):
-              $err='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke nem létezik.</p>';
+            /**
+             * Megnézzük, hogy az adott sorszámmal létezik-e címke a rendszerben.
+             * Csak hozzáadott címke rendelhetőtelephelykhez.
+             * 
+            */
+            $query_cimke = sprintf('SELECT `id` FROM `cimke` WHERE `sorszam`="%s"', $mysqli->real_escape_string($sorszam));
+            $result_cimke = $mysqli->query($query_cimke);
+            $count_cimke = $result_cimke->num_rows;
+            if($count_cimke != 1):
+              $err .='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke nem létezik.</p>';
             else:
+              
+              $query_telephely_cimkek = sprintf('SELECT `id` FROM `telephely_cimkek` WHERE `cid`="%s"', $mysqli->real_escape_string($result_cimke['id']));
+              $result_telephely_cimkek = $mysqli->query($query_telephely_cimke);
+              $count_telephely_cimkek = $result_telephely_cimkek->num_rows;
+              if($count_telephely_cimke != 0):
+                
+              else:
+                $err .='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke már hozzá lett rendelve egy telephelyhez.</p>';
+              endif;
+
               $stmt = $mysqli->prepare('INSERT INTO `cimke` (`tid`) VALUES (?)');
               $stmt->bind_param('s', $telephely);
 
@@ -39,10 +66,10 @@
             $sorszam++; 
             $i++; // Számláló
 
-          } while($sorszam <= $cimke['veg']);
+          } while($sorszam <= $veg);
 
-          $msg = '<p>' . $i . ' új címke került a rendszerbe.</p>';
-          $msg = '<p>Ha hibát írt ki, vissza kell vonni a műveletet.<br>Szükség esetén készíts képernyőképet és kérj segítséget!</p>';
+          $msg .= '<p>' . $i . ' címke hozzá lett rendelve a telephelyhez..</p>';
+          $msg .= '<p>Ha hibát írt ki, vissza kell vonni a műveletet.<br>Szükség esetén készíts képernyőképet és kérj segítséget!</p>';
           $cimke = false;
         else:
           $msg='<p>Hiányzó adatok.</p>';
@@ -74,6 +101,7 @@
                   while($telephely = $result->fetch_assoc()) {
                       echo('<input id="telephely' . $telephely['id'] . '" type="radio" name="telephely" value="' . $telephely['id'] .'" label="'.$telephely['name'].'" title="'.$telephely['name'].'" required>');
                   }
+                  echo('<input class="torles" type="radio" name="telephely" value="NULL" label="Elvétel / Törlés" title="Korábbi kapcsolat törlése" required>');
                 ?>
               </div>
 
