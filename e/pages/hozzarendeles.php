@@ -46,7 +46,7 @@
               $query_telephely_cimkek = sprintf('SELECT `id` FROM `cimke` WHERE `sorszam`="%s" AND `tid` IS NOT NULL', $mysqli->real_escape_string($sorszam));
               $result_telephely_cimkek = $mysqli->query($query_telephely_cimkek);
               $count_telephely_cimkek = $result_telephely_cimkek->num_rows;
-              if($count_telephely_cimke != 0):
+              if($count_telephely_cimkek != 0):
                 $err .='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke már hozzá lett rendelve egy telephelyhez.</p>';
               endif;
                
