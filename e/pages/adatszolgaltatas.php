@@ -65,7 +65,7 @@ switch($segments[1]):
             <td style="border:1px solid #ccc;">t'.$row['tszam'].'/d'.$row['doboz'].'</td>
             <td style="border:1px solid #ccc;">'.$row['datum'].'</td>
             <td style="border:1px solid #ccc;">'.$vtsz.'</td>
-            <td style="border:1px solid #ccc;" title="'.$row['id'].'">'.$row['telephely'].'</td>
+            <td style="border:1px solid #ccc;" title="'.$row['tid'].'">'.$row['telephely'].'</td>
         </tr>');
     }
 
