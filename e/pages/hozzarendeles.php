@@ -47,7 +47,7 @@
               $result_telephely_cimkek = $mysqli->query($query_telephely_cimkek);
               $count_telephely_cimkek = $result_telephely_cimkek->num_rows;
               if($count_telephely_cimkek != 0):
-                $err .='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke már hozzá lett rendelve egy telephelyhez.</p>';
+                $err .='<p>A(z) <span class="red">'.$sorszam.'</span> sorszámú címke már hozzá lett rendelve egy telephelyhez.</p>';
               endif;
                
               $stmt = $mysqli->prepare('UPDATE `cimke` SET `tid` = ? WHERE `cimke`.`sorszam` = "'.$sorszam.'"');
