@@ -31,9 +31,9 @@ if( isset($_POST['save']) ):
       elseif($count > 1):
         $err='<p>A(z) <span class="bold">'.$sorszam.'</span> sorszámú címke egynél többször szerepel a jegyzében. Ilyen nem fordulhatna elő, jelezd a hibát az illetékesnek.</p>';
       else:
-        $datum      = ( isset($_POST['datum'])  and !empty($_POST['datum']) ) ? date('Y-m-d', strtotime($_POST['datum'])) : false;
-        $kn         = ( isset($_POST['termek'])     and !empty($_POST['termek'])    ) ? $_POST['termek']                  : false;
-        $telephely  = isset($branch)                                          ? $branch                       : false;
+        $datum      = ( isset($_POST['datum']) and !empty($_POST['datum'])) ? date('Y-m-d', strtotime($_POST['datum'])) : false;
+        $kn         = ( isset($_POST['termek']) and !empty($_POST['termek'])) ? $_POST['termek'] : false;
+        $telephely  = isset($branch['id']) ? $branch['id'] : false;
       
         if(!$datum or !$telephely or !$kn):
           $err="<p>Minden mezőt ki kell tölteni!</p>";

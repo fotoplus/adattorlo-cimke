@@ -45,13 +45,13 @@ endif;
     <link rel="stylesheet" href="/styles/master.css?<?php echo date('U'); ?>">
     <link rel="stylesheet" href="/styles/<?php echo $page['name']; ?>.css?<?php echo date('U'); ?>">
 
-        <title><?php echo $title . ' címkenyilvántartás - ' . $branch; ?></title>
+        <title><?php echo $title . ' címkenyilvántartás - ' . $branch['name']; ?></title>
     <meta name="description" content="Weboldal">
 
   </head>
 
   <body>
-      <div id="branch"><?php echo $branch; ?></div>
+      <div id="branch"><?php echo $branch['name']; ?></div>
       <main class="main-center rounded-main">
         <?php
           if($allow) {
