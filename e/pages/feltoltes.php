@@ -85,14 +85,12 @@
             $stmt->bind_param('sssss', $cimke['iktatoszam'], $cimke['tszam'], $cimke['csomag'], $cimke['doboz'], $sorszam);
             if ( $stmt->execute() ) :
               $log .= 'A <span class="green">' . $sorszam . '</span> sorszámú címke hozzáadva.'.chr(13);
+              $i++; // Számláló léptetés (sikeres hozzáadás)
             else:
               // Ez mondjuk hiba esetén nem jelenik meg, mert már feljebb megáll.
               $log .= '<span class="red">Hiba (' . $sorszam . '): '.$stmt->errorCode().'</span>'.chr(13);
             endif;
-
-            $sorszam++; 
-            $i++; // Számláló
-
+            $sorszam++; // Címke sorszám léptetés
           } while($sorszam <= $cimke['veg']);
 
           $msg = '<p>' . $i . ' új címke került a rendszerbe.</p>';
