@@ -7,13 +7,15 @@ table {
 }
 
   table td {
-    width:33%;
+    width:25%;
     text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
     tr:nth-of-type(2) > td {
       padding-top: 25px;
       padding-bottom: 25px;
       font-size: large;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.5);
     }
