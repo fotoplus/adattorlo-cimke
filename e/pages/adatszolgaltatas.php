@@ -4,7 +4,6 @@ $segments[1] = isset($segments[1]) ? $segments[1] : false;
 switch($segments[1]):
   default:
     ?>
-      <p>Itt csak a teljes lekérdezés "működik".</p>
       <nav>  
           <ul>    
             <li><a href="/adatszolgaltatas/jegyzek-lekerdezes" class="space">Jegyzékek listázása</a></li>
