@@ -3,12 +3,16 @@ section {
   background-color: beige;;
 }
 
-table td {
-  width:33%;
+table {
+  width: 100%;
 }
 
-tr:nth-of-type(2) > td {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  font-size: large;
-}
+  table td {
+    width:33%;
+  }
+
+    tr:nth-of-type(2) > td {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      font-size: large;
+    }
