@@ -52,8 +52,8 @@ switch($segments[1]):
       while($row = $result->fetch_assoc()) {
         $vtsz= substr($row['kn'], 0, 4);
 
-        $telephely_e = not_null($telephely[ $row['e_tid'] ]) ? $telephely[ $row['e_tid'] ] : false;
-        $telephely_c = not_nll($telephely[ $row['c_tid'] ]) ? $telephely[ $row['c_tid'] ] : false;
+        $telephely_e = !empty($telephely[ $row['e_tid'] ]) ? $telephely[ $row['e_tid'] ] : false;
+        $telephely_c = !empty($telephely[ $row['c_tid'] ]) ? $telephely[ $row['c_tid'] ] : false;
 
         echo <<<HTML
           <tr>
