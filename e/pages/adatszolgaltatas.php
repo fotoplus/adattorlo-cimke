@@ -48,7 +48,7 @@ switch($segments[1]):
     echo '<a href="/adatszolgaltatas/jegyzek-lista" class="space">Vissza</a>';
   break;
   case "teljes-lekerdezes":
-    $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `cimke`.`tid`, `telephelyek`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephelyek` ON `ertekesites`.`tid` = `telephelyek`.`id`');
+    $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `tid`, `telephelyek`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephelyek` ON `ertekesites`.`tid` = `telephelyek`.`id`');
     $result = $mysqli->query($query);
     echo <<<HTML
       <a href="/adatszolgaltatas" class="space">Vissza</a>
@@ -82,6 +82,7 @@ switch($segments[1]):
       </table>
       <a href="/adatszolgaltatas" class="space">Vissza</a>
     HTML;
+
   break;
 endswitch;
 
