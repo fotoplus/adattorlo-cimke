@@ -2,6 +2,13 @@ section {
   margin-bottom: 40px;
 }
 
+h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: normal;
+  color: gray;
+}
+
 table {
   width: 100%;
 }
@@ -17,5 +24,5 @@ table {
       padding-top: 25px;
       padding-bottom: 25px;
       font-size: large;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(0, 0, 0, 0.2);
     }
