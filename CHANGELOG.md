@@ -1,7 +1,8 @@
 
 **2022-01-26** <br>
 Az NMHH UT/30145-2/2021 iktatószámon jegyzett tájékoztatása szerint:
->A memóriakártyák nem tartoznak azon eszközök körébe, amelyre az adattörlő szolgáltatást alkalmazni lehet.
+>A memóriakártyák nem tartoznak azon eszközök körébe, 
+>amelyre az adattörlő szolgáltatást alkalmazni lehet.
 
 Azaz a memóriakártyákhoz nem kell címkét adni, a "Memóriakártya" már nem választató ki az értékesítési felületen.
 
