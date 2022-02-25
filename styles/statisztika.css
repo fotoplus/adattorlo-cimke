@@ -16,13 +16,12 @@ table {
   table td {
     width:25%;
     text-align: center;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-right: 5px;
   }
 
     tr:nth-of-type(2) > td {
       padding-top: 25px;
       padding-bottom: 25px;
       font-size: large;
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.05);
     }
