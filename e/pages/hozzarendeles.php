@@ -69,6 +69,7 @@
           $msg .= '<p>' . $i . ' címke hozzá lett rendelve a telephelyhez.</p>';
           $msg .= '<p>Ha hibát írt ki, vissza kell vonni a műveletet.<br>Szükség esetén készíts képernyőképet és kérj segítséget!</p>';
           $cimke = false;
+
         else:
           $msg='<p>Hiányzó adatok.</p>';
           die($msg);

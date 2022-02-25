@@ -1,3 +1,6 @@
+<?php
+
+echo <<<HTML
 <h1>Adattörlő beváltókód címke nyilvántartás</h1>
 
 <nav>
@@ -17,3 +20,6 @@
   <p><a class="rounded-main border-main" href="https://nmhh.hu/veglegestorles" target="_blank">Nemzeti Média és Hírközlési Hatóság</a></p>
   <p><a class="rounded-main border-main" href="https://veglegestorles.hu" target="_blank">Véglegestörlés weboldal</a></p>
 </article>
+
+HTML;
+?>
