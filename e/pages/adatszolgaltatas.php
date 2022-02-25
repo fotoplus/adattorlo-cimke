@@ -7,7 +7,7 @@ switch($segments[1]):
       <p>Itt csak a teljes lekérdezés "működik".</p>
       <nav>  
           <ul>    
-            <li><a href="/adatszolgaltatas/jegyzek-lista" class="space">Jegyzékek listázása</a></li>
+            <li><a href="/adatszolgaltatas/jegyzek-lekerdezes" class="space">Jegyzékek listázása</a></li>
             <li><a href="/adatszolgaltatas/teljes-lekerdezes" class="space">Teljes lekérdezés indítása</a></li>
           </ul>
           <a href="/" class="space">Vissza</a>
@@ -18,35 +18,51 @@ switch($segments[1]):
       
     <?php
   break;
-  case "jegyzek-lista":
-    $query=('SELECT `id`, `datum`, `iktatoszam` FROM `atadas-atvetel` ORDER BY `datum` ASC');
-    $result = $mysqli->query($query);
-    echo <<<HTML
-      <p>Ez a funkció még nem működik!</p>
-      <form>
-      <a href="/adatszolgaltatas" class="space">Vissza</a>
-      <table style="border:1px solid #ccc; text-align: center;" width="100%">
-    HTML;
+  case "jegyzek-lekerdezes":
 
-    while($row = $result->fetch_assoc()) {
-      echo ('
-        <tr>
-            <td style="border:1px solid #ccc;">'.$row['iktatoszam'].'</td>
-            <td style="border:1px solid #ccc;">'.$row['datum'].'</td>
-            <td style="border:1px solid #ccc;"><button name="jegyzek" value="'.$row['id'].'" title="Lekérdezés indítása erre a jegyzékre">Lekérdezés</button></td>
-        </tr>');
-    }
+    if( isset($_POST['jegyzek-lekerdezes']) ):
+      
+      echo <<<HTML
+        <a href="/adatszolgaltatas" class="space">Vissza</a>
+      HTML;
 
-    echo <<<HTML
-      </table>'
-      <a href="/adatszolgaltatas" class="space">Vissza</a>
-    HTML;
+    else:
+
+      $query=('SELECT `id`, `datum`, `iktatoszam` FROM `atadas-atvetel` ORDER BY `datum` ASC');
+      $result = $mysqli->query($query);
+      echo <<<HTML
+        <p>Ez a funkció még nem működik!</p>
+        <a href="/adatszolgaltatas" class="space">Vissza</a>
+        <form name="jegyzek-lekerdezes" method="post">
+          <table style="border:1px solid #ccc; text-align: center;" width="100%">
+      HTML;
+
+      while($row = $result->fetch_assoc()) {
+        echo <<<HTML
+            <tr>
+                <td style="border:1px solid #ccc;">{$row['iktatoszam']}</td>
+                <td style="border:1px solid #ccc;">{$row['datum']}</td>
+                <td style="border:1px solid #ccc;"><button name="jegyzek" value="{$row['id']}" title="Lekérdezés indítása erre a jegyzékre">Lekérdezés</button></td>
+            </tr>
+        HTML;
+      }
+
+      echo <<<HTML
+          </table>
+        </form>
+        <a href="/adatszolgaltatas" class="space">Vissza</a>
+      HTML;
+
+    endif;
 
   break;
+  /*
   case "jegyzek-lekerdezes":
-    
+    echo '<a href="/adatszolgaltatas/jegyzek-lista" class="space">Vissza</a>';
+
     echo '<a href="/adatszolgaltatas/jegyzek-lista" class="space">Vissza</a>';
   break;
+  */
   case "teljes-lekerdezes":
     $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `tid`, `telephelyek`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephelyek` ON `ertekesites`.`tid` = `telephelyek`.`id`');
     $result = $mysqli->query($query);
@@ -73,7 +89,7 @@ switch($segments[1]):
             <td style="border:1px solid #ccc;">t{$row['tszam']}/d{$row['doboz']}</td>
             <td style="border:1px solid #ccc;">{$row['datum']}</td>
             <td style="border:1px solid #ccc;">{$vtsz}</td>
-            <td style="border:1px solid #ccc;" title="{$row['tid']}">{$row['telephely']}</td>
+            <td style="border:1px solid #ccc;" title="TID: {$row['tid']}">{$row['telephely']}</td>
         </tr>
       HTML;
     }
