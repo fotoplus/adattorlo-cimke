@@ -26,11 +26,14 @@ switch($segments[1]):
         <a href="/adatszolgaltatas/jegyzek-lekerdezes" class="space">Vissza</a>
       HTML;
 
-      $query = ('SELECT * FROM `telephelyek` ORDER BY `id` ASC');
-      $result = $mysqli->query($query);
-      $telephely = $result->fetch_array(MYSQLI_ASSOC);
 
-      print_r($telephely);
+      $result = $mysqli->query('SELECT * FROM `telephelyek` ORDER BY `id` ASC LIMIT 10');
+      $rows = $result->fetch_all(MYSQLI_ASSOC);
+      foreach ($rows as $row) {
+          printf("%s (%s)\n", $row["Name"], $row["CountryCode"]);
+      }
+
+      print_r($rows);
       die;
 
 
