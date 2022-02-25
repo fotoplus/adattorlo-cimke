@@ -58,8 +58,8 @@ switch($segments[1]):
               <td style="border:1px solid #ccc;">t{$row['tszam']}/d{$row['doboz']}</td>
               <td style="border:1px solid #ccc;">{$row['datum']}</td>
               <td style="border:1px solid #ccc;">{$vtsz}</td>
-              <td style="border:1px solid #ccc;" title="TID: {$row['tid']}">{$telephely['tid']}</td>
-              <td style="border:1px solid #ccc;" title="TID: {$row['c_tid']}">{$telephely['c_id']}</td>
+              <td style="border:1px solid #ccc;" title="TID: {$row['tid']}">{$telephely[ $row['tid'] ]}</td>
+              <td style="border:1px solid #ccc;" title="TID: {$row['c_tid']}">{$telephely[ $row['c_tid'] ]}</td>
           </tr>
         HTML;
       }
