@@ -15,7 +15,6 @@ $eladhato = $osszes - $eladott;
 
 echo <<<HTML
   <section class="rounded-main">
-    <h1>Címkék</h1>
     <table>
       <tr>
         <td>Összes</td>
@@ -31,8 +30,6 @@ echo <<<HTML
       </tr>
     </table>
   </section>
-
-  <h1>Telephelyek szerint</h1>
 HTML;
 
 

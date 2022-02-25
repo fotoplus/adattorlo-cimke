@@ -1,5 +1,6 @@
-section {
+section:first-of-type {
   margin-bottom: 40px;
+  background-color: #F1F1F1;
 }
 
 h2 {
