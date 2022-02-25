@@ -5,7 +5,7 @@ $result_osszes = $mysqli->query('SELECT `id` FROM `cimke` WHERE 1');
 $osszes = $result_osszes->num_rows;
 
 $result_nincs_atadva = $mysqli->query('SELECT `id` FROM `cimke` WHERE `tid` IS NULL');
-$osszes_nincs_atadva = $result_nincs_atadva->num_rows;
+$nincs_atadva = $result_nincs_atadva->num_rows;
 
 
 $result_eladott = $mysqli->query('SELECT `id` FROM `ertekesites` WHERE 1');
