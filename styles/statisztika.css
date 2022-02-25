@@ -11,7 +11,7 @@ h2 {
 
 table {
   width: 100%;
-  border-spacing:10px;
+  margin-bottom: 2em;;
 }
 
   table td {
@@ -21,8 +21,7 @@ table {
   }
 
     tr:nth-of-type(2) > td {
-      padding-top: 25px;
+      padding-top: 5px;
       padding-bottom: 25px;
-      font-size: large;
-      background-color: rgba(0, 0, 0, 0.05);
+      font-size: 3em;
     }
