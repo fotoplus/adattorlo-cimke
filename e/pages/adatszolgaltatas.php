@@ -53,7 +53,7 @@ switch($segments[1]):
         $vtsz= substr($row['kn'], 0, 4);
 
         $telephely_e = not_null($telephely[ $row['e_tid'] ]) ? $telephely[ $row['e_tid'] ] : false;
-        $telephely_c = not_nill($telephely[ $row['c_tid'] ]) ? $telephely[ $row['c_tid'] ] : false;
+        $telephely_c = not_nll($telephely[ $row['c_tid'] ]) ? $telephely[ $row['c_tid'] ] : false;
 
         echo <<<HTML
           <tr>
