@@ -11,7 +11,7 @@ $nincs_atadva = $result_nincs_atadva->num_rows;
 $result_eladott = $mysqli->query('SELECT `id` FROM `ertekesites` WHERE 1');
 $eladott = $result_eladott->num_rows;
 
-$szabad = $osszes - $eladott;
+$eladhato = $osszes - $eladott;
 
 echo <<<HTML
   <section class="rounded-main">
@@ -20,13 +20,13 @@ echo <<<HTML
       <tr>
         <td>Összes</td>
         <td>Eladott</td>
+        <td>Eladható</td>
         <td>Szabad</td>
-        <td>Nincs átadva</td>
       </tr>
       <tr>
         <td class="rounded-main">{$osszes}</td>
         <td class="rounded-main">{$eladott}</td>
-        <td class="rounded-main">{$szabad}</td>
+        <td class="rounded-main">{$eladhato}</td>
         <td class="rounded-main">{$nincs_atadva}</td>
       </tr>
     </table>
@@ -45,7 +45,7 @@ while($row = $result->fetch_assoc()) {
   $result_eladott = $mysqli->query('SELECT `id` FROM `ertekesites` WHERE `tid` = '. $row['id']);
   $eladott = $result_eladott->num_rows;
 
-  $szabad = $osszes - $eladott;
+  $eladhato = $osszes - $eladott;
 
   echo <<<HTML
       <section class="rounded-main">
@@ -54,12 +54,12 @@ while($row = $result->fetch_assoc()) {
           <tr>
             <td>Összes</td>
             <td>Eladott</td>
-            <td>Szabad</td>
+            <td>Eladható</td>
           </tr>
           <tr>
             <td class="rounded-main">{$osszes}</td>
             <td class="rounded-main">{$eladott}</td>
-            <td class="rounded-main">{$szabad}</td>
+            <td class="rounded-main">{$eladhato}</td>
           </tr>
         </table>
       </section>
