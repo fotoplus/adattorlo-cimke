@@ -16,7 +16,7 @@ table {
   table td {
     width:25%;
     text-align: center;
-    margin-right: 5px;
+    padding-right: 5px;
   }
 
     tr:nth-of-type(2) > td {
