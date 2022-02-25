@@ -26,20 +26,19 @@ switch($segments[1]):
         <a href="/adatszolgaltatas/jegyzek-lekerdezes" class="space">Vissza</a>
       HTML;
 
-      $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `tid`, `telephelyek`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephelyek` ON `ertekesites`.`tid` = `telephelyek`.`id` WHERE `cimke`.`aid` = %s');
+      $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `tid`, `cimke`.`tid` AS `c_tid`,  `telephelyek`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephelyek` ON `ertekesites`.`tid` = `telephelyek`.`id` WHERE `cimke`.`aid` = %s');
       $query = sprintf($query, $mysqli->real_escape_string($_POST['jegyzek']));
       $result = $mysqli->query($query);
       echo <<<HTML
-        <a href="/adatszolgaltatas" class="space">Vissza</a>
         <table style="border:1px solid #ccc; text-align: center;" width="100%">
-        
         <tr>
             <td style="border:1px solid #ccc;">Csomag azonosító</td>
             <td style="border:1px solid #ccc;">Címke sorszáma</td>
             <td style="border:1px solid #ccc;">Doboz azonosító</td>
             <td style="border:1px solid #ccc;">Átadás dátuma</td>
             <td style="border:1px solid #ccc;">VTSZ</td>
-            <td style="border:1px solid #ccc;">Telephely <span class="red">(törlendő!)</span></td>
+            <td style="border:1px solid #ccc;">Eladta <span class="red">(törlendő!)</span></td>
+            <td style="border:1px solid #ccc;">Helye <span class="red">(törlendő!)</span></td>
         </tr>
       HTML;
   
@@ -53,6 +52,7 @@ switch($segments[1]):
               <td style="border:1px solid #ccc;">{$row['datum']}</td>
               <td style="border:1px solid #ccc;">{$vtsz}</td>
               <td style="border:1px solid #ccc;" title="TID: {$row['tid']}">{$row['telephely']}</td>
+              <td style="border:1px solid #ccc;" title="TID: {$row['c_tid']}">{$row['telephely']}</td>
           </tr>
         HTML;
       }
@@ -61,8 +61,6 @@ switch($segments[1]):
         </table>
         <a href="/adatszolgaltatas/jegyzek-lekerdezes" class="space">Vissza</a>
       HTML;
-
-
 
     else:
 
