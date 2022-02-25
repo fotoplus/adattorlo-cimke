@@ -15,4 +15,5 @@ table {
       padding-top: 25px;
       padding-bottom: 25px;
       font-size: large;
+      background-color: rgba(red, green, blue, 0.2);
     }
