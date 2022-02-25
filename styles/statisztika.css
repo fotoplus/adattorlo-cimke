@@ -1,6 +1,5 @@
 section {
-  border-color:beige;
-  background-color: beige;;
+  margin-bottom: 40px;
 }
 
 table {
@@ -9,10 +8,11 @@ table {
 
   table td {
     width:33%;
+    text-align: center;
   }
 
     tr:nth-of-type(2) > td {
-      margin-top: 25px;
-      margin-bottom: 25px;
+      padding-top: 25px;
+      padding-bottom: 25px;
       font-size: large;
     }
