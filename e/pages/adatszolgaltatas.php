@@ -33,7 +33,7 @@ switch($segments[1]):
           $telephely[ $row["id"] ] = $row["name"];
       }
 
-      $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `tid`, `cimke`.`tid` AS `c_tid` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` WHERE `cimke`.`aid` = %s');
+      $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `e_tid`, `cimke`.`tid` AS `c_tid` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` WHERE `cimke`.`aid` = %s');
       $query = sprintf($query, $mysqli->real_escape_string($_POST['jegyzek']));
       $result = $mysqli->query($query);
       echo <<<HTML
@@ -58,10 +58,14 @@ switch($segments[1]):
               <td style="border:1px solid #ccc;">t{$row['tszam']}/d{$row['doboz']}</td>
               <td style="border:1px solid #ccc;">{$row['datum']}</td>
               <td style="border:1px solid #ccc;">{$vtsz}</td>
-              <td style="border:1px solid #ccc;" title="TID: {$row['tid']}">{$telephely[ $row['tid'] ]}</td>
+              <td style="border:1px solid #ccc;" title="TID: {$row['tid']}">{$telephely[ $row['e_tid'] ]}</td>
               <td style="border:1px solid #ccc;" title="TID: {$row['c_tid']}">{$telephely[ $row['c_tid'] ]}</td>
           </tr>
         HTML;
+
+        print '---------';
+        print_r($telephely);
+        print '---------';
       }
   
       echo <<<HTML
