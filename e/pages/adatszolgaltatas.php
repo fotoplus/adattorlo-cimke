@@ -121,6 +121,7 @@ switch($segments[1]):
     $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `e_tid`, `cimke`.`tid` AS `c_tid` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` WHERE 1');
     $result = $mysqli->query($query);
     echo <<<HTML
+      <a href="/adatszolgaltatas" class="space">Vissza</a>
       <table style="border:1px solid #ccc; text-align: center;" width="100%">
       <tr>
           <td style="border:1px solid #ccc;">Csomag azonosító</td>
@@ -151,45 +152,6 @@ switch($segments[1]):
         </tr>
       HTML;
     }
-
-    echo <<<HTML
-      </table>
-      <a href="/adatszolgaltatas/jegyzek-lekerdezes" class="space">Vissza</a>
-    HTML;
-
-
-    /*
-    $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `tid`, `telephelyek`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephelyek` ON `ertekesites`.`tid` = `telephelyek`.`id`');
-    $result = $mysqli->query($query);
-    echo <<<HTML
-      <a href="/adatszolgaltatas" class="space">Vissza</a>
-      <table style="border:1px solid #ccc; text-align: center;" width="100%">
-      
-      <tr>
-          <td style="border:1px solid #ccc;">Csomag azonosító</td>
-          <td style="border:1px solid #ccc;">Címke sorszáma</td>
-          <td style="border:1px solid #ccc;">Doboz azonosító</td>
-          <td style="border:1px solid #ccc;">Átadás dátuma</td>
-          <td style="border:1px solid #ccc;">VTSZ</td>
-          <td style="border:1px solid #ccc;">Telephely <span class="red">(törlendő!)</span></td>
-      </tr>
-    HTML;
-
-    while($row = $result->fetch_assoc()) {
-      $vtsz= substr($row['kn'], 0, 4);
-      echo <<<HTML
-        <tr>
-            <td style="border:1px solid #ccc;">t{$row['tszam']}/d{$row['doboz']}/csb{$row['csomag']}</td>
-            <td style="border:1px solid #ccc;">{$row['cimke']}</td>
-            <td style="border:1px solid #ccc;">t{$row['tszam']}/d{$row['doboz']}</td>
-            <td style="border:1px solid #ccc;">{$row['datum']}</td>
-            <td style="border:1px solid #ccc;">{$vtsz}</td>
-            <td style="border:1px solid #ccc;" title="TID: {$row['tid']}">{$row['telephely']}</td>
-        </tr>
-      HTML;
-    }
-
-    */
 
     echo <<<HTML
       </table>
