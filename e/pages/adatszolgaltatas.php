@@ -26,7 +26,7 @@ switch($segments[1]):
         <a href="/adatszolgaltatas/jegyzek-lekerdezes" class="space">Vissza</a>
       HTML;
 
-      $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `tid`, `cimke`.`tid` AS `c_tid`,  `telephelyek`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephelyek` ON `ertekesites`.`tid` = `telephelyek`.`id` WHERE `cimke`.`aid` = %s');
+      $query=('SELECT `cimke`.`sorszam` AS `cimke`, `kn` , `datum`, `tszam`, `doboz`, `csomag` , `ertekesites`.`tid` AS `tid`, `cimke`.`tid` AS `c_tid`,  `telephelyek`.`name` AS `telephely` FROM `cimke` LEFT JOIN `ertekesites` ON `ertekesites`.`sorszam`=`cimke`.`sorszam` LEFT JOIN `telephelyek` ON `ertekesites`.`tid` = `telephelyek`.`id` AND  `cimke`.`tid` = `telephelyek`.`id` WHERE `cimke`.`aid` = %s');
       $query = sprintf($query, $mysqli->real_escape_string($_POST['jegyzek']));
       $result = $mysqli->query($query);
       echo <<<HTML
