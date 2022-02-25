@@ -28,12 +28,12 @@ switch($segments[1]):
 
 
       $result = $mysqli->query('SELECT * FROM `telephelyek` ORDER BY `id` ASC LIMIT 10');
-      $rows = $result->fetch_all(MYSQLI_ASSOC);
-      foreach ($rows as $row) {
-          printf("%s (%s)\n", $row["id"], $row["name"]);
+      $telephely=array();
+      while($row = $result->fetch_assoc()) {
+          $telephely[ $row["id"] ] = $row["name"];
       }
 
-      print_r($rows);
+      print_r($telephely);
       die;
 
 
