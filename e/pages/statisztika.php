@@ -12,7 +12,7 @@ while($row = $result->fetch_assoc()) {
   $szabad = $osszes - $eladott;
 
   echo <<<HTML
-      <section>
+      <section class="rounded-main">
         <h2>{$row['name']}</h2>
         <table>
           <tr>
@@ -21,9 +21,9 @@ while($row = $result->fetch_assoc()) {
             <td>Szabad</td>
           </tr>
           <tr>
-            <td>{$osszes}</td>
-            <td>{$eladott}</td>
-            <td>{$szabad}</td>
+            <td class="rounded-main">{$osszes}</td>
+            <td class="rounded-main">{$eladott}</td>
+            <td class="rounded-main">{$szabad}</td>
           </tr>
         </table>
       </section>

@@ -1,0 +1,14 @@
+section {
+  border-color:beige;
+  background-color: beige;;
+}
+
+table > tr > td {
+  width:33%;
+}
+
+table > tr:nth-of-type(2) > td {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: large;
+}
