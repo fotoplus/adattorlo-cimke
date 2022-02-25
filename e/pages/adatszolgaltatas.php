@@ -50,6 +50,7 @@ switch($segments[1]):
       HTML;
   
       while($row = $result->fetch_assoc()) {
+        /*
         $vtsz= substr($row['kn'], 0, 4);
         echo <<<HTML
           <tr>
@@ -62,8 +63,8 @@ switch($segments[1]):
               <td style="border:1px solid #ccc;" title="TID: {$row['c_tid']}">{$telephely[ $row['c_tid'] ]}</td>
           </tr>
         HTML;
-        print $telephely[ $row['e_tid'] ];
-        print $telephely[ $row['c_tid'] ];
+        */
+        print '--eTID:'. $telephely[ $row['e_tid'] ] . "--cTID:" . $telephely[ $row['c_tid'] ]. '<br>';
       }
   
       echo <<<HTML
