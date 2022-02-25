@@ -50,8 +50,11 @@ switch($segments[1]):
       HTML;
   
       while($row = $result->fetch_assoc()) {
-        /*
         $vtsz= substr($row['kn'], 0, 4);
+
+        $telephely_e = not_null($telephely[ $row['e_tid'] ]) ? $telephely[ $row['e_tid'] ] : false;
+        $telephely_c = not_nill($telephely[ $row['c_tid'] ]) ? $telephely[ $row['c_tid'] ] : false;
+
         echo <<<HTML
           <tr>
               <td style="border:1px solid #ccc;">t{$row['tszam']}/d{$row['doboz']}/csb{$row['csomag']}</td>
@@ -59,12 +62,10 @@ switch($segments[1]):
               <td style="border:1px solid #ccc;">t{$row['tszam']}/d{$row['doboz']}</td>
               <td style="border:1px solid #ccc;">{$row['datum']}</td>
               <td style="border:1px solid #ccc;">{$vtsz}</td>
-              <td style="border:1px solid #ccc;" title="TID: {$row['e_tid']}">{$telephely[ $row['e_tid'] ]}</td>
-              <td style="border:1px solid #ccc;" title="TID: {$row['c_tid']}">{$telephely[ $row['c_tid'] ]}</td>
+              <td style="border:1px solid #ccc;">{$telephely_e}</td>
+              <td style="border:1px solid #ccc;">{$telephely_c}</td>
           </tr>
         HTML;
-        */
-        print '--eTID:'. $telephely[ $row['e_tid'] ] . "--cTID:" . $telephely[ $row['c_tid'] ]. '<br>';
       }
   
       echo <<<HTML
