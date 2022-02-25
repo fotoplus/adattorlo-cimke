@@ -20,8 +20,8 @@ switch($segments[1]):
   break;
   case "jegyzek-lekerdezes":
 
-    if( isset($_POST['jegyzek-lekerdezes']) ):
-      
+    if( isset($_POST['jegyzek']) and is_numeric($_POST['jegyzek']) ):
+
       echo <<<HTML
         <a href="/adatszolgaltatas" class="space">Vissza</a>
       HTML;
