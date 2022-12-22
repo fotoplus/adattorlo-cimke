@@ -285,3 +285,13 @@ nav ul li a {
   color: red !important;
   background-color: white !important;
 }
+
+
+#discontinued {
+  margin-top:1px;
+  margin-bottom: 25px;
+  padding: 25px 25px 25px 25px;
+  background-color: rgba(221, 0, 0, 0.5);
+  color: red;
+  border: 1px solid red;
+}
