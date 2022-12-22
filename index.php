@@ -51,17 +51,18 @@ endif;
   </head>
 
   <body>
-      <div id="discontinued">
-        <p>
-          2023. március 31-ét követően az adatszolgáltatásnak a NAV online- számlaadat és pénztárgép rendszerén keresztül kell eleget tenni,<br>
-          az újonan, a NAV-tól megigényelt kódokkal.<br>
-        </p>
-        <p class="bold">
-          Végleges adattörlő aktiválókódokat tartalmazó címkéket ettől a dátumtól fogyasztóknak átadni nem lehet!
-        </p>
-      </div>
       <div id="branch"><?php echo $branch['name']; ?></div>
-      <main class="main-center rounded-main" class="red rounded-main">
+      <main class="main-center rounded-main" >
+
+        <div id="discontinued" class="red rounded-main">
+          <p>
+            2023. március 31-ét követően az adatszolgáltatásnak a NAV online- számlaadat és pénztárgép rendszerén keresztül kell eleget tenni,<br>
+            az újonan, a NAV-tól megigényelt kódokkal.<br>
+          </p>
+          <p class="bold">
+            Végleges adattörlő aktiválókódokat tartalmazó címkéket ettől a dátumtól fogyasztóknak átadni nem lehet!
+          </p>
+        </div>
 
         <?php
           if($allow) {
