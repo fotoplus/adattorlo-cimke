@@ -1,6 +1,9 @@
+**Módosítás:** [https://github.com/fotoplus/adattorlo-cimke/issues/2](https://github.com/fotoplus/adattorlo-cimke/issues/2)
+
+---
+
 # Adattörlő beváltó kód nyilvántartás
 
-[https://github.com/fotoplus/adattorlo-cimke/issues/2](https://github.com/fotoplus/adattorlo-cimke/issues/2)
 
 Egyszerűen követhetővé teszi a kódokat tartamazó cimkék nyilvántartását.
 
