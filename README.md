@@ -1,6 +1,8 @@
-**Új:** [https://github.com/fotoplus/adattorlo-kod](https://github.com/fotoplus/adattorlo-cimke)
+**Új:** [https://github.com/fotoplus/adattorlo-kod](https://github.com/fotoplus/adattorlo-kod)
 
-**Módosítás:** [https://github.com/fotoplus/adattorlo-cimke/issues/2](https://github.com/fotoplus/adattorlo-cimke/issues/2)
+
+:warning: Jogszabály változás miatt ez már nem használható, részletek:
+[Módosítás az adatszolgáltatás és az adattörlőkód igénylés megváltozása miatt](https://github.com/fotoplus/adattorlo-cimke/issues/2)
 
 ---
 
